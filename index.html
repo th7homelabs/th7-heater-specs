@@ -420,11 +420,25 @@
             overflow: hidden;
             transition: max-height 0.4s ease;
         }
-        .heater-card.expanded .card-detail { max-height: 800px; }
+        .heater-card.expanded .card-detail { max-height: 1100px; }
+
+        .detail-hero {
+            background: var(--sage-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 20px;
+            border-top: 1px solid var(--border-light);
+        }
+        .detail-hero img {
+            max-height: 180px;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        .detail-hero.no-img { display: none; }
 
         .detail-inner {
             padding: 0 20px 20px;
-            border-top: 1px solid var(--border-light);
         }
 
         .detail-section {
@@ -3825,6 +3839,9 @@ function renderResults() {
                 <span class="card-chevron">▼</span>
             </div>
             <div class="card-detail">
+                <div class="detail-hero ${getHeaterImage(h.itemNumber) ? '' : 'no-img'}">
+                    <img src="${getHeaterImage(h.itemNumber) || ''}" alt="${h.name}" onerror="this.parentElement.classList.add('no-img')">
+                </div>
                 <div class="detail-inner">
                     <div class="detail-section">
                         <div class="detail-section-title">⚡ Performance</div>
