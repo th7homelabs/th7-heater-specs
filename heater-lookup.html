@@ -2,957 +2,713 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- iOS PWA / Home Screen App -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TH7 Heater Specs</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="TH7 Heaters">
-    <meta name="theme-color" content="#24231a">
-    <link rel="apple-touch-icon" href="data:image/png;base64,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">
-    
-    <!-- PWA Manifest (inline) -->
-    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIlRINyBTYXVuYSBIZWF0ZXIgU3BlY3MiLCAic2hvcnRfbmFtZSI6ICJUSDcgSGVhdGVycyIsICJzdGFydF91cmwiOiAiLiIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMjQyMzFhIiwgInRoZW1lX2NvbG9yIjogIiMyNDIzMWEiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFMUUFBQUMwQ0FZQUFBQTl6UVl5QUFBUWprbEVRVlI0bk8zZFNYQWMxM25BOGU5N3I1ZVo2Y0VzMkltRnBFZ1FKS09JRWlsS2xtakw1Q1d4ZlVvVUs3azVOOG4yeGJtbVhDbGxPOXR4SmFvVVpWWEpCK3VTVXlRbnFiSlRzUlVuRlZteXhWMGJDWUlFQVJJQVFRSVl6RDdkNzcwdmg4RndFU2tLQkdZQm5yN2ZFZVIwdjJuODBkUDc0Tmp1SVFMR0xDRTZQUURHbW9tRFpsYmhvSmxWT0dobUZRNmFXWVdEWmxiaG9KbFZPR2htRlE2YVdZV0RabGJob0psVk9HaG1GUTZhV1lXRFpsYmhvSmxWT0dobUZRNmFXWVdEWmxiaG9KbFZPR2htRlE2YVdZV0RabGJob0psVk9HaG1GUTZhV1lXRFpsYmhvSmxWT0dobUZRNmFXWVdEWmxiaG9KbFZPR2htRlE2YVdZV0RabGJob0psVk9HaG1GUTZhV1lXRFpsYmhvSmxWT0dobUZRNmFXWVdEWmxiaG9KbFZPR2htRlE2YVdZV0RabGJob0psVk9HaG1GUTZhV1lXRFpsYmhvSmxWT0dobUZRNmFXWVdEWmxiaG9KbFZuRTRQZ0hXZUVLaU5JZGsva256MzBjT0RJN1dxVXMyYTlqcy9uOXJackdtdEJRZk5nQWdJQU1CeFpaVE0rQ05lUllJZmR6czlySFhob05rdFJJUkVRTVZDTkhmaDNNMExUWnJzc1NaTlowMDRhSFliQVVwSFlLMnFsaTUvdEhpczA4TlpEdzZhM1lVTWdlT0tSTG83OW1FenByZXlWSDIwR2ROWkt3NmEzWVpBV2hrSWt1Nk9MLzNCRHRtTVNmN252NXh2eG1UV3JPMUJJeUlCMUhkQ3Rnb0VBQUpBSXNKYlAxdjcrN2pyZGEzU3JQRWdJZ0FnRW0ycFg5RXRPTFo3YUd1T25EVVRBUUM2bmxpSkpid2J4dERxMy9ERFF5UURnQUFJUUFaRUtWOGJhKzVRSDZ6dGEraWVucDdyUWdqVDd2bXVHeEdpRUtaV3JjVlc4aXZkalI5bnM5bWJydXVHWkl5QSt0cngwNjhEUkFSdGpGeGFXdXByNVZvYUVhbTd1L3VHRkVJVEVRRGVaMWFyN3lPS0ltOTVlYm4zMDVNQUFJaENrNDdDYXJwVjQyeUh0Z2Y5NDFkZmhYUTZtVmJLME9ybjI2Wm10RGJwZEViKzhwZi9kZWJsdi82Ylo2U1VXbXN0Ly83di9uYjJ3SUhIOXBSS1pZTkMzUE0reUJERjR4NWVtWjZaZi9IRmwxSmhHTVVRa1pvWmRtTjZydXZXZnZTamZ5aVBEQS8xMTJyaGZaY3JHV09DSUpDbno1eVorTjczL3FMM004WkNlTDgvempVZ0FBTkV6c0JJOGpmWmdTQ3NsVUthdnBoN1dpdEtyT3ZOclZQYmc0N0hZMEVpRVNTME5rQkVvTFhldEpzOGp1T2dNUnFTeVFUNHZuL1hUbExNajNuSlpCQUhBRUFVb0pTNjlUNmtsQWlBRUl0NUVJc2xZdTBZYXp3ZWl5VVNRY0p4M0h1V3ErTTRTR1FnbVF3Z0Zvczk2SXpKK3JiM0VRZ0lwT3ZKcGYySEJ4N3QzNVpLZlh4cS9qZGFVM3c5NzJVajJoNjBNVm9wcFVncFRmRjRYS1JTWFZqZmdtdjNTRDVmb1ZBRXBiU0tJaVdOTm5mOTRXbWpUUlFwaWlKdGZGL0tiRGFEalUvN2Nya01sVXBOTzQ0UXhtamRqckZxYll4U2lxSW9NckdZTCs5Y3JzVmlDY0t3L2o2MDFrM2YzRU5BVFVETzBNN1V1YURMUDNyemVxRTArY0hOSWFEMi8xWTdjWlFEQVJCOTM0ZnpGODVmUEh2MjNKeVVEbXlxQXgrR0FBVEMwYU5mUFpBTWtsMklpSUIzLzNKd2xlYzVZbUZoNGZxL3Z2bk9CVWM2cUxTaXcwOCt1V04wZEhTMDhiL2FOV3hFUk4vM3hOVFVsZWtUSjA5ZWtVS2lNWnFPSERreTN0dmIyOWNZYzVOblMwUWtwU05LSTJPWk1TRUZMTXlXenBhTDBiTk5ucythZE9RNHROYWEwdWswdnZ2dWI2OGRQMzc4YUNmR3NCYVBQdnA3RjN1NmU5S2ZkUWpMR0lKNFBJNlhweTdQL3VBSFAzeXU4ZlB2Zi84di8yL2Z2cjNiUzZWeTI4WmFINCtCSUVqZzJYTm5wKzhjencrSFIwNk5qbzRPR05QOER3dEUxRVRrYk51ZU9wbnBpVDlYTFlkNjVzSnlDZ0FvMHhzL203dFplYnpwTTMyQWpwMVlJU0x3UFI5ZDF3bWxrRW9idmU2eEVCRWFjM3NOS2dTYXhucUlDTUFZRXJmLzdjRTdQbzJkSlNHRUVVS0t6enNlUzBUZ09LNFFRaXJYZGFJb1VxN3JlSi83dWxZaEluQmRUd2dobGVQSVNDbnRPbzZVclJvUEFVa1VFQTd2VGc5SktlakdiT25VeWxMMU1DS2FYZnU3OWNuL3ZkYVMrWDZXamdXTmlCQ0dJVVdSOGlKUVhqT25iUjZ3bGZpZ2Y3djMvNjUxZTVQQUdPMW9qV1NNZGdoTVI3ZWZpQnJqZ2ZwNFdsVXpvZ0lpcDMrazYwUjNmK0xaV2xYQjlNU3lBQURLOXNYTzlvOTBIV3JKZkIrZ0kwRTdqc1JDb1VESGpoMGRlMlRuanZkUkNselBRamRhVTZxclMvNzhGNzhvL2V6Zi92MDVLUjJsdFhLKys1M3YvSHJ2M3IxSlFJS0xGeThWWDNubGxhT053MjB2dlBETlh4ODdkcXlyV0N4b0llUTkyNU9OTXdvSUFJTURnL3RydGRERVlqN2ZDSEVmQ0NBQXdZenV5YVJjVjlLMWE3a1BsaGNxVHdBQWpvNWxReUZGMjNmMzJ4NDAxWmtvQ21sa1pIaDQ5KzVkd3c4N0RRUUFGQWhLYWNqMjlNREZ5Y24vQVFCQUJBTUE4T1NoZ3dOZi9zcFg5aEVaeUdUZXY3ajZLZ0lBMkx0M24vTzFyLzNob2FYRkpaRHl3WmNybE10bENNTXdNb1lBYURQdHRYWWVDdFJrU1BZTUp0N3ZIUWdPaDVHR21ZbGNpWWd3bWZFdjlJMGtEMFdodHY4b2grZDZYaXdXRTBwcEFDQ29WcXZybUFwQkdDcXR0VktPSTUxcXRYcFhiS1Z5cFpiTDVUU1JnWEtwZE5jTXRJcW9XcWxBcFZJaHgzRWV1TUFkeHdFaGhCdUx4Y0J4bktaY3JHT04xZVBWMjhlN2hlYzdOSDgxUDNGanJuZ0lBSEQ3bnN4Q0xPNk81eGJMMXdGZ29KM0RhbnZRYy9Qejg4VlNPV0cwSWhRUGZ3aUpESkdRVW1TejNYMUNTQ21sbENqdTNpSVFRcUNVVWhJaGZQb3Mza3Erb0dkblorZFhWdkphU3ZHNWtTcHRUS0ZRRkV2TFM1V0hIYXV0Vm85c3lIUlAvSU9ld2VBSnBRek9YTXd0a0lIeFJOS2RHaHhOSFRMYXdNeEU3aE93UGVnWFgvcjJFT0o2TDN4Qk1vWkVKcE5aK3NsUFhpOGxnNkJyclp2ZXhtZ0pBUERhYTY4ZGVmMzExOVhESGZkRzBGby9EUUNndGVidDZWWGJ4elBGUk1MRm0vUEZxWVdaNGtFQWdKSGRtU3ZKdEw5ejhYcnAyclZMS3dmYlBhYTJCeDJHNFlaUEJWZXIxWFZQUXlubEtxVzI1ZzF6bThEcTJsbDBwYjJKL3VHdVExb1R6a3ptcm1odGR2cHhaMzdienRRQklvRFpTeXNUS2pMSDJqMitUbDBQdmU3WEVoRktLVGQwK25aOVl5Q2dEcHpLM2FSd2RFL21lcEQwOWl6ZktNM1BYY2tmQUFBWWZpVDlTU29UUDViUFZaYXVYVjU1REtEOUZ6VjA0aWpIaHQ1Zy9VYk9qVTlqSTYvL29rSUVRMFFpbG5CbkJyYW5EaHBEY08xeS9oTVZtbU9PSjVlSGQ2WDJJUUxNWHNxZkMydjZLQ0lxSW1wclk3dzl5TlpzOVpNTnQrL0pYRXAyK1VFK1YxbTZkaW0zSHdCZ2FFZlgyWFIzWXJDUXJ4Wm5MdWIyQUFBQlVOdjc0cURaMmlBWVkwaDRNZWZHdHAycEF3QUE4OVBGYzdXcUhoQlNsRVoycFhjS2lUQTNsVDlWTFVkREtOQVF0Yjh2RHBxdENRSWFBTURoWGVrUHV6S3hiREZmSzgxTUxEOENBREE0bWp5VjdROTJsUEpoZFdZaU53ejFIWTZPYk5aeDBHd3RpSWlrNDRyOHlDT3BmUUlSNXFZTEp5dWxhRHNLREVmR3NuMk9JMkgrYXVGa3FSRHVRdXpNMmhtQUgyUFFDZFNzUzVJYlIyczJjdVJvamZPcFh5SzZNM1VxMVJNL1dpcldhbGNuY3dNQVFIMUR5Wk05QTRsbnlxVlFUVjlZemtLSEwyem5vTnV2YVk4SWFCeXRVVXEzOHJnNkVaQVVFcXVqdXpNN3BCQjAvV3JoVkRGWGV3WVJ6TWhZT3VINURzMU9MWjRxTEZlZnFxK2RxV09YQ1hEUWJlWjViczN6L0NxUndZMGVvbTBjbC9jOEw1U0lMZm1JYjZ5ZEIwYTZUbVI2RTErdWxDTjlkU0lYQUFCbCt4T24rN2NsRDFZckVVNWZXSzcvVVdGbkwrUGlvTnRFQ0dHTU1lTDU1Ly9rM2U5Kys2WEhGcGVXSWlrM2ZzRlQvY3dGWVNxZDdnL0RVQVZCME9UZktVa1VxRWZITXoyT0kyajJ5c3JwM0dMMVNRQ0EwYkdNOXVNdVhKMWNQck44by9JRUloZ3luVnM3QTNEUWJaZUl4Nm0zcjdmYkFCalhjWnF5VmlVaVVFcHJZN1RTOWJzTW1yS09iRndpMnJjdE9OSFRGendkMWhUTVRPUUFFQ2lWOVQvcUgwNGVER3NLcjF4WXJnSGMrc1JveHF6WGpZTnVNOGR4d0k4SEVDVEt3bldidC9nUlVXcXRaVHFiaFhnaTNwd0pyMjZqajQ1bllwNHZZWFlxLzhIaTlmTGpRSUNqWTVtVlJOSjM1cTZzZkxJNFgzNFNFZWpPVzkwNmhZTnVrOFlPM09Ua3BQOGZQM3Zydlh5aFFFTGVlOGZNUmhodEtKa004TXlaczlYNlBOZS9rZDY0UkRUYkZ6L2R0eTM1ZUxXaXpOVDVwUklRT2NtMGQzRndOSDFJUlJxbUozS0xSTFFQRUJWQWUwOXozMC9IQi9CRlFVU0lpUFNydDk5KzlsZHZ2OTJtdVpxTnJESHJGL0R2eVlZQ1VWZXJVYlJqWDNld2ZUeDcxbzg1YWRlWDd2S044dFRDMWNMaCtvNWdaN2VkR3pqb05oQkNhaUdNUWdTcVA1VkVORFkwbTd6QlNWZy9SMDFDYTdYdTMyMWoyem5iRnorOVk3ejdhYTBOQkYyK2srNk8vejVBL2RZMzE1WHc0WHR6MDhiUVRrUlV0QW5XemdBY2RNc1pZNmhhclFaMy83UXREMU5hdjlWTkZlRmdkUDcwd245SGtWazlHb2UzL3BFSVlIWXEveFNzbmtYczZIanZ3RUczQ0NKQ0ZDblRuYzEydi96eVg3MmpOUkhXNzlSdDJXRUFNZ2FDSU1EZnZmODc5ZWFiYjMwVlFCaUFoNy9EaHFpK2M3YzRWMzVxY2E2OUQ4dlpLQTY2QlZZZmJrUEdhSjFJSklMbi8raVBqN1Q2TW5kRUJLMDFwRExkQUdqZWUvUE50MkM5dDdyZG5pWVlxRitVZEYrcmErWk5kVzA1QjkwQ1VrajBQQmVkK2lPVklGOG90SHllV210dGpJNE1nVk11VlpyeVBZUDFDNHc2ZnlqdVlYRFFMVkN0VnZUS3lrcWhVQ2dvRktMbHl4Z0JJQjVQQkVLQTQwanAzTzk1MVY4VUhIUVRHV01rQU1BLy90TXJUeHgvOWNmaDZsbXpxRlh6dStPQjUrSHg0LzljR2h3WUhDVGFPbCtPMEFvY2RBdVV5K1ZrdWR5K25hbjZZODdNOWJiTmNCUGpvTnVnVmRjck45YlFqdU9FclpqK1ZzUkJOMUVqM0gzNzluNjBiV2hiUVNzRDFVckZlZi9FaVlQR2JPaXMzV2RxeGwzd051R2dtd2dSRFFESVAvL1d0NHAvK21jdmZLbGNxc0QwOVBUU04xOTRJUXhEMC9RdkRXTDM0cUJib0Z5cHFOeHlUcGZMRlNnVWkwVUFhT3MzUVgyUmNkQXRJQVJDL1RHU0VvUVFXK280N2xiSEM1dFpoWU5tVnVHZ21WVTRhR1lWRHBwWmhZTm1WdUdnbVZVNGFHWVZEcHBaaFlObVZ1R2dtVlU0YUdZVmE0SmVmWWdMYmZSTzU2MDYvMC9iYk9OcEZ5dUNYbjN3Q1JwRG9sUGZKVmlmUDNScy9wKzIyY2JUTGxaY1BvcUlJSVRRanVNb0loTFlyTzk4V1BzSVZ1Y3ZGSkZBaE03ZWRYMTdlVWlsRkdIN2wwZm5iT21ncFpTd3NwS25iM3pqNndlZlBYSmtGaEdCaUtDdnQyZFB1VnpXUVJDMDlCRlZVZ29vRnN0bS8vNTllOTk0NDZlMzV0K2R6UjdJNTR2Rzk3MjJmZ0pLS2FGUUtKb2p6eDU1L0kwM2ZqcUxxdy93NnV2dEdXL0g4dGdNdG16UVJHUzBOa1pyVFYxZHFWUTJtMDBSQVNBQ2hHRUVTcWxJYTRQUW9nZHdFeEZwclkweDJ2aWVIM3RrNTQ3Unh2eWpTRUVVS1dXTWdUWStBWnhXbDRjSmdrU1F5YVNDK3kyUGpqK1J2TVcyWk5DSVNMNGZpd2RCWENpbEFLQytabXg4c1BxK0Q1N251a0dRQU0veld2S0ZPcDdudVVFUWlQb21qcmhyL3A3bmdldTZUanp1Zys5N1hpdm1mKzk0M0ZnUXhJWGpDUEhnNWVHMzhndUdPbTVMQnExVTVIejg4VWVmSkpOSlR5bDEzejFiUTBUeGVFSk9UbDY2QVFEanpSN0R4Y2xMQzQ3alVLVlMwZUkrMjZnR2dIelBGWE56ODNraWVyelo4NzhURVlrTDV5Y3U1M0lyTjFVVTNmZmJpQnJMNDlMa1pFdVd4MmFCWTd1SHJQNElZbDhzVmh5Mlk2eUJnMlpXNGFDWlZUaG9aaFVPbWxtRmcyWlc0YUNaVlRob1poVU9tbG1GZzJaVzRhQ1pWVGhvWmhVT21sbUZnMlpXNGFDWlZUaG9aaFVPbWxtRmcyWlc0YUNaVlRob1poVU9tbG1GZzJaVzRhQ1pWVGhvWmhVT21sbUZnMlpXNGFDWlZUaG9aaFVPbWxtRmcyWlc0YUNaVlRob1poVU9tbG1GZzJaVzRhQ1pWVGhvWmhVT21sbUZnMlpXNGFDWlZUaG9aaFVPbWxtRmcyWlc0YUNaVlRob1poVU9tbG1GZzJaVzRhQ1pWVGhvWmhVT21sbUZnMlpXNGFDWlZUaG9aaFVPbWxtRmcyWlc0YUNaVmY0ZjBnWW1RYWhFQWZjQUFBQUFTVVZPUks1Q1lJST0iLCAic2l6ZXMiOiAiMTgweDE4MCIsICJ0eXBlIjogImltYWdlL3BuZyJ9XX0=">
-    <title>TH7 Sauna Heater Specifications</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#f5f3ed">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
         :root {
-            /* TH7 Brand Colors */
             --charcoal: #24231a;
-            --white: #ffffff;
             --steam: #e5e3d9;
-            --asher: #58595b;
             --sage: #617332;
-            
-            /* Mapped to UI roles */
-            --bg-dark: var(--charcoal);
-            --bg-card: #2d2c22;
-            --bg-card-hover: #363529;
-            --accent-primary: var(--sage);
-            --accent-secondary: #7a8f42;
-            --text-primary: var(--steam);
-            --text-secondary: #a8a69c;
-            --text-muted: var(--asher);
-            --border: #3d3c32;
+            --sage-light: #7a8f42;
+            --sage-bg: #f0efe8;
+            --cream: #f5f3ed;
+            --white: #ffffff;
+            --asher: #58595b;
+            --border: #e0ddd4;
+            --border-light: #eceae3;
+            --text-primary: #24231a;
+            --text-secondary: #6b6960;
+            --text-muted: #9e9b91;
+            --shadow-sm: 0 1px 3px rgba(36,35,26,0.06);
+            --shadow-md: 0 4px 12px rgba(36,35,26,0.08);
+            --shadow-lg: 0 8px 30px rgba(36,35,26,0.12);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --radius-xs: 6px;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: var(--bg-dark);
+            background: var(--cream);
             color: var(--text-primary);
             min-height: 100vh;
-            padding: 20px;
+            min-height: 100dvh;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1400px;
+        .app { max-width: 500px; margin: 0 auto; min-height: 100vh; min-height: 100dvh; position: relative; }
+
+        /* ===== HEADER ===== */
+        .app-header {
+            padding: 24px 20px 0;
+            text-align: center;
+        }
+        .app-header img {
+            display: block;
+            height: 48px;
+            width: auto;
+            max-width: 260px;
+            margin: 0 auto 8px;
+        }
+        .app-header .tagline {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--sage);
+            font-weight: 600;
+        }
+
+        /* ===== VIEWS ===== */
+        .view { display: none; }
+        .view.active { display: block; }
+
+        /* ===== CALCULATOR VIEW ===== */
+        .calc-view { padding: 20px; }
+        .calc-hero {
+            text-align: center;
+            padding: 40px 0 30px;
+        }
+        .calc-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+        .calc-hero p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            max-width: 300px;
             margin: 0 auto;
         }
 
-        header {
+        .calc-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            margin-bottom: 16px;
+        }
+        .calc-card-title {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--sage);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .dim-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .dim-field {
+            flex: 1;
+            position: relative;
+        }
+        .dim-field input {
+            width: 100%;
+            padding: 16px 12px 8px;
+            background: var(--sage-bg);
+            border: 1.5px solid transparent;
+            border-radius: var(--radius-sm);
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            transition: all 0.2s;
             text-align: center;
-            padding: 40px 20px 50px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 40px;
+        }
+        .dim-field input:focus {
+            outline: none;
+            border-color: var(--sage);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(97,115,50,0.12);
+        }
+        .dim-field input::placeholder { color: var(--text-muted); font-weight: 400; font-size: 1rem; }
+        .dim-field label {
+            display: block;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-top: 6px;
+            text-align: center;
         }
 
-        .logo {
+        /* Glass elements */
+        .glass-element {
+            background: var(--sage-bg);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .glass-element-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .glass-element-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .glass-remove {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .glass-remove:hover { color: #c44; background: rgba(200,60,60,0.08); }
+        .glass-element .dim-row { margin: 0; }
+        .glass-element .dim-field input {
+            background: var(--white);
+            font-size: 1.1rem;
+        }
+        .add-glass-btn {
+            width: 100%;
+            padding: 12px;
+            background: none;
+            border: 1.5px dashed var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .add-glass-btn:hover { border-color: var(--sage); color: var(--sage); }
+        .glass-note {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .calc-submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--sage);
+            border: none;
+            border-radius: var(--radius-sm);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 8px;
+        }
+        .calc-submit:hover { background: var(--sage-light); }
+        .calc-submit:active { transform: scale(0.98); }
+
+        /* ===== RESULTS VIEW ===== */
+        .results-view { padding: 0 20px 100px; }
+
+        .results-summary {
+            text-align: center;
+            padding: 30px 0 20px;
+        }
+        .results-summary .volume-display {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--sage);
+            line-height: 1;
+        }
+        .results-summary .volume-unit {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+        .results-summary .volume-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .results-summary .match-count {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 12px;
+        }
+        .results-summary .match-count strong {
+            color: var(--sage);
+            font-weight: 700;
+        }
+
+        /* Filter pills */
+        .filter-row {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding: 0 0 16px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .filter-row::-webkit-scrollbar { display: none; }
+        .filter-pill {
+            padding: 8px 16px;
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 100px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .filter-pill:hover { border-color: var(--sage); color: var(--sage); }
+        .filter-pill.active {
+            background: var(--sage);
+            border-color: var(--sage);
+            color: var(--white);
+        }
+
+        /* Search */
+        .search-bar {
+            position: relative;
+            margin-bottom: 16px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 14px 14px 14px 42px;
+            background: var(--white);
+            border: 1.5px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+        .search-bar input:focus { outline: none; border-color: var(--sage); box-shadow: 0 0 0 3px rgba(97,115,50,0.1); }
+        .search-bar input::placeholder { color: var(--text-muted); }
+        .search-bar::before {
+            content: "\1F50D";
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        /* ===== HEATER CARDS ===== */
+        .heater-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 1.5px solid var(--border-light);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        .heater-card:hover { box-shadow: var(--shadow-md); }
+        .heater-card.expanded { box-shadow: var(--shadow-lg); border-color: var(--sage); }
+
+        .card-summary {
+            padding: 14px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .card-img {
+            width: 52px;
+            height: 52px;
+            border-radius: 10px;
+            background: var(--sage-bg);
+            overflow: hidden;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 4px;
+        }
+        .card-img.no-img {
+            display: none;
+        }
+        .card-power {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 16px;
+            flex-shrink: 0;
         }
-
-        .logo-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon img {
-            display: block;
-            height: 60px;
-            width: auto;
-            max-width: 100%;
-        }
-
-        h1 {
+        .card-power .kw-num {
             font-family: 'Oxanium', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: var(--steam);
-        }
-
-        .subtitle {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-top: 8px;
-        }
-
-        .controls {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 40px;
-        }
-
-        .search-box {
-            position: relative;
-            flex: 1;
-            max-width: 500px;
-            min-width: 280px;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 16px 20px 16px 52px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-primary);
-            font-size: 1rem;
-            font-family: 'Montserrat', sans-serif;
-            transition: all 0.2s;
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(97, 115, 50, 0.25);
-        }
-
-        .search-box::before {
-            content: "🔍";
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.1rem;
-        }
-
-        .filter-btn {
-            padding: 14px 20px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--text-muted);
-            color: var(--text-primary);
-        }
-
-        .filter-btn.active {
-            background: var(--accent-primary);
-            border-color: var(--accent-primary);
-            color: white;
-        }
-
-        .filter-btn.saunum.active {
-            background: var(--accent-primary);
-            border-color: var(--accent-primary);
-        }
-
-        .stats-bar {
-            display: flex;
-            gap: 32px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-            padding: 20px;
-            background: var(--bg-card);
-            border-radius: 6px;
-            border: 1px solid var(--border);
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--accent-primary);
-        }
-
-        .stat-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-top: 4px;
-        }
-
-        .heaters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 20px;
-        }
-
-        .heater-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 24px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .heater-card:hover {
-            background: var(--bg-card-hover);
-            border-color: var(--text-muted);
-            transform: translateY(-2px);
-        }
-
-        .heater-card.saunum {
-            border-left: 3px solid var(--accent-primary);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 16px;
-        }
-
-        .heater-name {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 500;
-            line-height: 1.4;
-            flex: 1;
-            padding-right: 16px;
-        }
-
-        .power-badge {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 8px 14px;
-            background: var(--accent-primary);
-            border-radius: 6px;
-            white-space: nowrap;
+            font-size: 1.2rem;
+            font-weight: 700;
             color: var(--white);
+            line-height: 1;
         }
-
-        .heater-card.saunum .power-badge {
-            background: var(--accent-secondary);
-        }
-
-        .card-meta {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .meta-tag {
-            font-size: 0.75rem;
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 6px;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        .meta-tag.brand {
-            background: rgba(97, 115, 50, 0.2);
-            color: var(--accent-primary);
-        }
-
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-
-        .spec-item {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            padding: 14px;
-        }
-
-        .spec-label {
-            font-size: 0.7rem;
-            color: var(--text-muted);
+        .card-power .kw-unit {
+            font-size: 0.5rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 6px;
         }
-
-        .spec-value {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 1rem;
+        .card-info { flex: 1; min-width: 0; }
+        .card-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--text-primary);
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+        .card-meta-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .card-tag {
+            font-size: 0.6rem;
+            padding: 3px 8px;
+            background: var(--sage-bg);
+            border-radius: 4px;
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .card-tag.brand { background: rgba(97,115,50,0.1); color: var(--sage); }
+        .card-chevron {
+            color: var(--text-muted);
+            font-size: 1rem;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .heater-card.expanded .card-chevron { transform: rotate(180deg); }
+
+        /* ===== EXPANDED DETAIL ===== */
+        .card-detail {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .heater-card.expanded .card-detail { max-height: 800px; }
+
+        .detail-inner {
+            padding: 0 20px 20px;
+            border-top: 1px solid var(--border-light);
         }
 
-        .spec-value.highlight {
-            color: var(--accent-primary);
+        .detail-section {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-light);
         }
-
-        .spec-note {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            margin-top: 4px;
-        }
-
-        .phase-indicator {
-            display: inline-flex;
+        .detail-section:last-child { border-bottom: none; }
+        .detail-section-title {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--sage);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
             align-items: center;
             gap: 6px;
         }
 
-        .phase-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent-primary);
+        .spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
         }
+        .spec-box {
+            background: var(--sage-bg);
+            border-radius: var(--radius-xs);
+            padding: 12px;
+        }
+        .spec-box .spec-val {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        .spec-box .spec-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        .spec-box.highlight {
+            background: rgba(97,115,50,0.1);
+        }
+        .spec-box.highlight .spec-val { color: var(--sage); }
 
-        .phase-indicator.three-phase .phase-dot {
-            background: var(--steam);
+        .install-step {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 12px;
         }
+        .install-step:last-child { margin-bottom: 0; }
+        .install-num {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--sage);
+            width: 24px;
+            height: 24px;
+            background: rgba(97,115,50,0.1);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .install-text {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .install-text strong { color: var(--charcoal); }
 
         .item-code {
             font-family: 'Oxanium', sans-serif;
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             color: var(--text-muted);
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
+            text-align: center;
+            padding-top: 8px;
         }
 
+        /* Brand colors for power badges */
+        .brand-saunum .card-power { background: #617332; }
+        .brand-tulikivi .card-power { background: #b5873a; }
+        .brand-huum .card-power { background: #4a90a4; }
+        .brand-iki .card-power { background: #9b5de5; }
+        .brand-eos .card-power { background: #d44040; }
+        .brand-harvia .card-power { background: #c74b16; }
+        .brand-helo .card-power { background: #2b7bbf; }
+        .brand-tylo .card-power { background: #8b5e3c; }
+
+        /* ===== BOTTOM NAV ===== */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 500px;
+            background: var(--white);
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            padding: 8px 20px;
+            padding-bottom: max(8px, env(safe-area-inset-bottom));
+            z-index: 100;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+        .nav-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            padding: 8px 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+        .nav-btn.active { color: var(--sage); }
+        .nav-btn .nav-icon { font-size: 1.2rem; }
+        .nav-btn .nav-label { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+
+        /* ===== NO RESULTS ===== */
         .no-results {
             text-align: center;
-            padding: 80px 20px;
-            color: var(--text-secondary);
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+        .no-results h3 { font-size: 1rem; color: var(--text-secondary); margin-bottom: 4px; }
+
+        /* ===== BACK BUTTON ===== */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 8px 0;
+            background: none;
+            border: none;
+            color: var(--sage);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
         }
 
-        .no-results h3 {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
+        /* ===== DISCLAIMER ===== */
         .disclaimer {
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 40px;
-            border-top: 1px solid var(--border);
+            padding: 24px 20px 40px;
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             line-height: 1.6;
         }
 
-        .disclaimer strong {
-            color: var(--accent-primary);
-        }
-
-        /* Room Calculator Styles */
-        .calculator-section {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 40px;
-        }
-
-        .calculator-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .calculator-header h2 {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--steam);
-            margin-bottom: 8px;
-        }
-
-        .calculator-header p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 24px;
-        }
-
-        .calc-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .calc-label {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 0.85rem;
-            color: var(--accent-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .input-row {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .input-field {
-            flex: 1;
-            min-width: 100px;
-            position: relative;
-        }
-
-        .input-field input {
-            width: 100%;
-            padding: 14px 12px;
-            padding-bottom: 28px;
-            background: var(--bg-dark);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-primary);
-            font-family: 'Oxanium', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .input-field input:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(97, 115, 50, 0.25);
-        }
-
-        .input-field input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .input-unit {
-            position: absolute;
-            bottom: 8px;
-            left: 12px;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        .glass-note {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        .glass-row {
-            margin-bottom: 12px;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 6px;
-            border: 1px solid var(--border);
-        }
-
-        .glass-row-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .glass-row-label {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-
-        .remove-glass-btn {
-            background: none;
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.7rem;
-            padding: 4px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            transition: all 0.2s;
-        }
-
-        .remove-glass-btn:hover {
-            border-color: #d44040;
-            color: #d44040;
-        }
-
-        .calculator-actions {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .calc-btn {
-            padding: 14px 28px;
-            border-radius: 6px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .calc-btn.primary {
-            background: var(--accent-primary);
-            border: 1px solid var(--accent-primary);
-            color: white;
-        }
-
-        .calc-btn.primary:hover {
-            background: var(--accent-secondary);
-            border-color: var(--accent-secondary);
-        }
-
-        .calc-btn.secondary {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-        }
-
-        .calc-btn.secondary:hover {
-            border-color: var(--text-muted);
-            color: var(--text-primary);
-        }
-
-        .calculator-results {
-            background: var(--bg-dark);
-            border-radius: 6px;
-            padding: 20px;
-        }
-
-        .result-card {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .result-item {
-            text-align: center;
-            padding: 16px;
-            background: var(--bg-card);
-            border-radius: 6px;
-        }
-
-        .result-item.total {
-            background: rgba(97, 115, 50, 0.2);
-            border: 1px solid var(--accent-primary);
-        }
-
-        .result-label {
-            display: block;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 8px;
-        }
-
-        .result-value {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--steam);
-        }
-
-        .result-item.total .result-value {
-            color: var(--accent-primary);
-        }
-
-        .suitable-count {
-            text-align: center;
-            padding: 16px;
-            background: var(--bg-card);
-            border-radius: 6px;
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-secondary);
-        }
-
-        .suitable-count .count-number {
-            font-family: 'Oxanium', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--accent-primary);
-            margin-right: 8px;
-        }
-
-        .volume-filter-active {
-            display: inline-block;
-            background: var(--accent-primary);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            margin-left: 12px;
-            cursor: pointer;
-        }
-
-        .volume-filter-active:hover {
-            background: var(--accent-secondary);
-        }
-
-        @media (max-width: 768px) {
-            .calculator-section {
-                padding: 20px;
-            }
-            
-            .input-row {
-                flex-direction: column;
-            }
-            
-            .input-field {
-                min-width: 100%;
-            }
-            
-            .calculator-actions {
-                flex-direction: column;
-            }
-            
-            .calc-btn {
-                width: 100%;
-            }
-        }
-
-        .brand-legend {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 3px;
-        }
-
-        .legend-dot.saunum {
-            background: var(--accent-primary);
-        }
-
-        .legend-dot.other {
-            background: var(--asher);
-        }
-
-        .heater-card.tulikivi {
-            border-left: 3px solid #b5873a;
-        }
-
-        .heater-card.tulikivi .power-badge {
-            background: #b5873a;
-        }
-
-        .heater-card.huum {
-            border-left: 3px solid #4a90a4;
-        }
-
-        .heater-card.huum .power-badge {
-            background: #4a90a4;
-        }
-
-        .heater-card.iki {
-            border-left: 3px solid #9b5de5;
-        }
-
-        .heater-card.iki .power-badge {
-            background: #9b5de5;
-        }
-
-        .heater-card.eos {
-            border-left: 3px solid #d44040;
-        }
-
-        .heater-card.eos .power-badge {
-            background: #d44040;
-        }
-
-        .heater-card.harvia {
-            border-left: 3px solid #c74b16;
-        }
-
-        .heater-card.harvia .power-badge {
-            background: #c74b16;
-        }
-
-        .heater-card.helo {
-            border-left: 3px solid #2b7bbf;
-        }
-
-        .heater-card.helo .power-badge {
-            background: #2b7bbf;
-        }
-
-        .heater-card.tylo {
-            border-left: 3px solid #8b5e3c;
-        }
-
-        .heater-card.tylo .power-badge {
-            background: #8b5e3c;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .heaters-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-bar {
-                gap: 20px;
-            }
-
-            .controls {
-                flex-direction: column;
-            }
-
-            .search-box {
-                max-width: 100%;
-            }
-
-            .filter-btn {
-                flex: 1;
-                text-align: center;
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 500px) {
+            body { background: var(--sage-bg); }
+            .app {
+                background: var(--cream);
+                min-height: 100vh;
+                box-shadow: var(--shadow-lg);
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <div class="logo-icon"><img src="data:image/png;base64,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" alt="TH7 HomeLabs"></div>
-                <h1>sauna heater specifications</h1>
-            </div>
-            <p class="subtitle">Australian Electrical Requirements & Room Sizing Guide</p>
-        </header>
+<div class="app" id="app">
 
-        <!-- Room Size Calculator -->
-        <div class="calculator-section" id="calculatorSection">
-            <div class="calculator-header">
-                <h2>room size calculator</h2>
-                <p>Enter your sauna dimensions to find suitable heaters</p>
+    <!-- Header -->
+    <div class="app-header">
+        <img src="data:image/png;base64,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" alt="TH7 HomeLabs">
+        <div class="tagline">Precision Heating Guide</div>
+    </div>
+
+    <!-- CALCULATOR VIEW -->
+    <div class="view active" id="calcView">
+        <div class="calc-view">
+            <div class="calc-hero">
+                <h1>Find Your<br>Perfect Heater.</h1>
+                <p>Enter your sauna dimensions and we'll match you with the right heater for your space.</p>
             </div>
-            
-            <div class="calculator-grid">
-                <div class="calc-group">
-                    <label class="calc-label">Room Dimensions</label>
-                    <div class="input-row">
-                        <div class="input-field">
-                            <input type="number" id="roomLength" placeholder="0.0" step="0.1" min="0">
-                            <span class="input-unit">m length</span>
-                        </div>
-                        <div class="input-field">
-                            <input type="number" id="roomWidth" placeholder="0.0" step="0.1" min="0">
-                            <span class="input-unit">m width</span>
-                        </div>
-                        <div class="input-field">
-                            <input type="number" id="roomHeight" placeholder="0.0" step="0.1" min="0">
-                            <span class="input-unit">m height</span>
-                        </div>
+
+            <div class="calc-card">
+                <div class="calc-card-title">Room Dimensions</div>
+                <div class="dim-row">
+                    <div class="dim-field">
+                        <input type="number" id="rL" placeholder="0.0" step="0.1" min="0">
+                        <label>Length (m)</label>
+                    </div>
+                    <div class="dim-field">
+                        <input type="number" id="rW" placeholder="0.0" step="0.1" min="0">
+                        <label>Width (m)</label>
+                    </div>
+                    <div class="dim-field">
+                        <input type="number" id="rH" placeholder="0.0" step="0.1" min="0">
+                        <label>Height (m)</label>
                     </div>
                 </div>
-                
-                <div class="calc-group">
-                    <label class="calc-label">Glass Elements (doors & windows)</label>
-                    <div id="glassElements">
-                        <div class="glass-row" data-index="0">
-                            <div class="glass-row-header">
-                                <span class="glass-row-label">Glass Door</span>
+            </div>
+
+            <div class="calc-card">
+                <div class="calc-card-title">Glass Elements</div>
+                <div id="glassContainer">
+                    <div class="glass-element" data-idx="0">
+                        <div class="glass-element-header">
+                            <span class="glass-element-label">Glass Door</span>
+                        </div>
+                        <div class="dim-row">
+                            <div class="dim-field">
+                                <input type="number" class="gH" placeholder="0.0" step="0.1" min="0">
+                                <label>Height (m)</label>
                             </div>
-                            <div class="input-row">
-                                <div class="input-field">
-                                    <input type="number" class="glass-h" placeholder="0.0" step="0.1" min="0">
-                                    <span class="input-unit">m height</span>
-                                </div>
-                                <div class="input-field">
-                                    <input type="number" class="glass-w" placeholder="0.0" step="0.1" min="0">
-                                    <span class="input-unit">m width</span>
-                                </div>
+                            <div class="dim-field">
+                                <input type="number" class="gW" placeholder="0.0" step="0.1" min="0">
+                                <label>Width (m)</label>
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
-                        <button class="calc-btn secondary" id="addGlassBtn" style="padding: 8px 16px; font-size: 0.75rem;">+ Add Window</button>
-                        <span class="glass-note" style="align-self: center;">1.5m³ added per 1m² of glass</span>
-                    </div>
                 </div>
+                <button class="add-glass-btn" id="addGlass">+ Add Window</button>
+                <div class="glass-note">1.5 m³ added per 1 m² of glass area</div>
             </div>
-            
-            <div class="calculator-actions">
-                <button class="calc-btn primary" id="calculateBtn">Calculate & Find Heaters</button>
-                <button class="calc-btn secondary" id="clearCalcBtn">Clear</button>
-            </div>
-            
-            <div class="calculator-results" id="calcResults" style="display: none;">
-                <div class="result-card">
-                    <div class="result-item">
-                        <span class="result-label">Base Volume</span>
-                        <span class="result-value" id="baseVolume">0 m³</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Glass Area</span>
-                        <span class="result-value" id="glassArea">0 m²</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Glass Addition</span>
-                        <span class="result-value" id="glassAddition">+0 m³</span>
-                    </div>
-                    <div class="result-item total">
-                        <span class="result-label">Total Effective Volume</span>
-                        <span class="result-value" id="totalVolume">0 m³</span>
-                    </div>
-                </div>
-                <div class="suitable-count" id="suitableCount">
-                    <span class="count-number">0</span> heaters suitable for your sauna
-                </div>
-            </div>
-        </div>
 
-        <div class="controls">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search heaters by name, power, brand, or item code...">
-            </div>
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn saunum" data-filter="saunum">Saunum</button>
-            <button class="filter-btn" data-filter="tulikivi">Tulikivi</button>
-            <button class="filter-btn" data-filter="huum">HUUM</button>
-            <button class="filter-btn" data-filter="iki">IKI</button>
-            <button class="filter-btn" data-filter="eos">EOS</button>
-            <button class="filter-btn" data-filter="harvia">Harvia</button>
-            <button class="filter-btn" data-filter="helo">Helo</button>
-            <button class="filter-btn" data-filter="tylo">Tylö</button>
-            <button class="filter-btn" data-filter="single">1-Phase</button>
-            <button class="filter-btn" data-filter="three">3-Phase</button>
-        </div>
-
-        <div class="brand-legend">
-            <div class="legend-item">
-                <div class="legend-dot saunum"></div>
-                <span>Saunum</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot" style="background: #b5873a;"></div>
-                <span>Tulikivi</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot" style="background: #4a90a4;"></div>
-                <span>HUUM</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot" style="background: #9b5de5;"></div>
-                <span>IKI</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot" style="background: #d44040;"></div>
-                <span>EOS</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot" style="background: #c74b16;"></div>
-                <span>Harvia</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot" style="background: #2b7bbf;"></div>
-                <span>Helo</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot" style="background: #8b5e3c;"></div>
-                <span>Tylö</span>
-            </div>
-        </div>
-
-        <div class="stats-bar">
-            <div class="stat">
-                <div class="stat-value" id="totalHeaters">0</div>
-                <div class="stat-label">Total Heaters</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value" id="powerRange">0</div>
-                <div class="stat-label">Power Range (kW)</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value" id="roomRange">0</div>
-                <div class="stat-label">Room Range (m³)</div>
-            </div>
-            <div class="stat" id="volumeFilterStat" style="display: none;">
-                <div class="stat-value" id="filterVolume">0</div>
-                <div class="stat-label">Filtering for (m³)</div>
-                <span class="volume-filter-active" id="clearVolumeFilter">✕ Clear</span>
-            </div>
-        </div>
-
-        <div class="heaters-grid" id="heatersGrid">
-            <!-- Cards will be inserted here -->
-        </div>
-
-        <div class="no-results" id="noResults" style="display: none;">
-            <h3>No heaters found</h3>
-            <p>Try adjusting your search or filters</p>
-        </div>
-
-        <div class="disclaimer">
-            <strong>⚠️ Important:</strong> All electrical specifications are based on Australian Standard AS/NZS 3000. 
-            Cable sizing assumes TPS cable in conduit at 40°C ambient. 
-            Always consult a licensed electrician for installation. Circuit breaker sizing and actual installation may vary based on cable run length, installation method, and local conditions.
+            <button class="calc-submit" id="calcBtn">Calculate & Find Heaters</button>
         </div>
     </div>
 
-    <script>
-        // Heater database with calculated Australian electrical specs
-        const heaters = [
+    <!-- RESULTS VIEW -->
+    <div class="view" id="resultsView">
+        <div class="results-view">
+            <button class="back-btn" id="backBtn">← Recalculate</button>
+            
+            <div class="results-summary">
+                <div class="volume-display" id="volDisplay">0<span class="volume-unit"> m³</span></div>
+                <div class="volume-label">Effective Volume</div>
+                <div class="match-count" id="matchCount"><strong>0</strong> heaters matched</div>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by name, brand, or kW...">
+            </div>
+
+            <div class="filter-row" id="filterRow">
+                <button class="filter-pill active" data-f="all">All</button>
+                <button class="filter-pill" data-f="saunum">Saunum</button>
+                <button class="filter-pill" data-f="tulikivi">Tulikivi</button>
+                <button class="filter-pill" data-f="huum">HUUM</button>
+                <button class="filter-pill" data-f="iki">IKI</button>
+                <button class="filter-pill" data-f="eos">EOS</button>
+                <button class="filter-pill" data-f="harvia">Harvia</button>
+                <button class="filter-pill" data-f="helo">Helo</button>
+                <button class="filter-pill" data-f="tylo">Tylö</button>
+                <button class="filter-pill" data-f="single">1-Phase</button>
+                <button class="filter-pill" data-f="three">3-Phase</button>
+            </div>
+
+            <div id="heaterList"></div>
+            <div class="no-results" id="noResults" style="display:none;">
+                <h3>No heaters found</h3>
+                <p>Try adjusting your filters or search</p>
+            </div>
+
+            <div class="disclaimer">
+                <strong>⚠️</strong> Specs based on AS/NZS 3000. Cable sizing assumes TPS in conduit at 40°C. Always consult a licensed electrician.
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div class="bottom-nav">
+        <button class="nav-btn active" id="navCalc"><span class="nav-icon">📐</span><span class="nav-label">Calculate</span></button>
+        <button class="nav-btn" id="navBrowse"><span class="nav-icon">📋</span><span class="nav-label">Browse</span></button>
+    </div>
+</div>
+
+<script>
+
+// ===== HEATER DATA =====
+const heaters = [
             // ============ SAUNUM HEATERS ============
             // --- Saunum Experience (Home Sauna, Compact Design) ---
             {
@@ -3682,328 +3438,479 @@
             }
         ];
 
-        // Sort by power
-        heaters.sort((a, b) => a.powerKW - b.powerKW);
+// Sort by power
+heaters.sort((a, b) => a.powerKW - b.powerKW);
 
-        let currentFilter = 'all';
-        let searchTerm = '';
-        let calculatedVolume = null;
+// Image URL lookup by model line
+const heaterImages = {
+  "saunum-experience": "https://saunum.com/wp-content/uploads/2023/10/saunum_experience_black_open_3_nb.png",
+  "saunum-spa": "https://saunum.com/wp-content/uploads/2023/09/Spa-Session-7-saltballs-2025.png",
+  "saunum-pro": "https://saunum.com/wp-content/uploads/2023/09/SA-A035-20-R00_2023-Mar-28_04-18-00PM-000_CustomizedView33396474024-75.png",
+  "saunum-luxury": "https://saunum.com/wp-content/uploads/2023/09/Saunum_Luxury_RV_Web75.png",
+  "tulikivi-kaarna": "https://saunabee.com/image/cache/catalog/EL%20heaters/Tulikivi/tulikivi-sauna-heaters-electric-sauna-heater-tulikivi-kaarna-d-nobile-102kw-without-control-unit-tulikivi-kaarna-d-nobile_VsvY-C-removebg-preview-330x409.png",
+  "tulikivi-pyry": "https://saunabee.com/image/cache/catalog/EL%20heaters/Tulikivi/tulikivi-sauna-heaters-electric-sauna-heater-tulikivi-pyry-e-local-45kw-with-local-control-unit-tulikivi-pyry-e-local_wYgzkG-removebg-preview-330x409.png",
+  "tulikivi-tuisku": "https://saunabee.com/image/cache/catalog/EL%20heaters/Tulikivi/tulikivi-sauna-heaters-electric-sauna-heater-tulikivi-pyry-e-wifi-45kw-with-local-control-unit-tulikivi-pyry-e-wifi_wC-HGC-removebg-preview-330x409.png",
+  "tulikivi-tuisku-xl": "https://saunabee.com/image/cache/catalog/EL%20heaters/Tulikivi/tulikivi-sauna-heaters-electric-sauna-heater-tulikivi-pyry-e-wifi-45kw-with-local-control-unit-tulikivi-pyry-e-wifi_wC-HGC-removebg-preview-330x409.png",
+  "tulikivi-routa": "https://saunabee.com/image/cache/catalog/EL%20heaters/Tulikivi/tulikivi-sauna-heaters-electric-sauna-heater-tulikivi-usva-e-68kw-black-with-wifi-control-unit-tulikivi-usva-e-wifi_YrgXHm-removebg-preview-330x409.png",
+  "tulikivi-halla": "https://saunabee.com/image/cache/catalog/EL%20heaters/Tulikivi/tulikivi-sauna-heaters-electric-sauna-heater-tulikivi-usva-e-45kw-black-with-wifi-control-unit-tulikivi-usva-e-wifi_WroRrx-removebg-preview-330x409.png",
+  "tulikivi-dbody": "https://saunabee.com/image/cache/catalog/EL%20heaters/Tulikivi/tulikivi-sauna-heaters-electric-sauna-heater-tulikivi-pyry-e-local-45kw-with-local-control-unit-tulikivi-pyry-e-local_lsNXOZ-removebg-preview-330x409.png",
+  "huum-cliff": "https://thesaunaheater.com/cdn/shop/files/Cliff_UKU_Black_d3fcf825-d90b-4aa5-b4e5-228a5f2cb06a.png?v=1726004945",
+  "huum-core": "https://thesaunaheater.com/cdn/shop/files/image_ffe5f698-59b9-4b28-ae1e-c2e71a3bdf89.png?v=1765992169",
+  "huum-dbody": "https://thesaunaheater.com/cdn/shop/files/Cliff_UKU_Black_d3fcf825-d90b-4aa5-b4e5-228a5f2cb06a.png?v=1726004945",
+  "huum-hive-mini": "https://thesaunaheater.com/cdn/shop/files/HiveMini_UKUBlack.png?v=1726011278",
+  "huum-hive": "https://thesaunaheater.com/cdn/shop/files/Hive_UKUBlack_512x512.png?v=1726012085",
+  "huum-drop": "https://thesaunaheater.com/cdn/shop/files/huum-drop-front_web_png.webp?v=1758209394",
+  "iki-pillar": "https://i0.wp.com/ikisaunas.com/wp-content/uploads/2025/03/pillar-short-with-bq.jpg",
+  "iki-pillar-pro": "https://i0.wp.com/ikisaunas.com/wp-content/uploads/2026/01/iki-pillar-6-kw-wifi-1400px.jpg",
+  "eos-34g": "https://www.eos-sauna.com/fileadmin/_processed_/8/4/csm_EOS_34.G_HD_Serie_53c5dbe5fc.jpg",
+  "eos-bio-star": "https://www.eos-sauna.com/fileadmin/_processed_/8/4/csm_EOS_34.G_HD_Serie_53c5dbe5fc.jpg",
+  "eos-46u": "https://www.eos-sauna.com/fileadmin/_processed_/7/3/csm_46U_XL_a614a1837f.jpg",
+  "eos-orbit": "https://www.eos-sauna.com/fileadmin/_processed_/d/4/csm_orbit_6af8b7b16b.jpg",
+  "eos-goliath": "https://www.eos-sauna.com/fileadmin/_processed_/3/0/csm_Goliath_c1e5d13d33.jpg",
+  "eos-herkules": "https://www.eos-sauna.com/fileadmin/_processed_/d/9/csm_EOS_Herkules-S120_Serie_3b83013b02.jpg",
+  "eos-herkules-vapor": "https://www.eos-sauna.com/fileadmin/_processed_/d/9/csm_EOS_Herkules-S120_Serie_3b83013b02.jpg",
+  "eos-mega-s": "https://www.eos-sauna.com/fileadmin/_processed_/5/8/csm_EOS_Mega_Serie_e804ec0c5c.jpg",
+  "eos-mega": "https://www.eos-sauna.com/fileadmin/_processed_/5/8/csm_EOS_Mega_Serie_e804ec0c5c.jpg",
+  "eos-zeus": "https://www.eos-sauna.com/fileadmin/_processed_/e/5/csm_Zeus_98077827e9.jpg",
+  "eos-zeus-l": "https://www.eos-sauna.com/fileadmin/_processed_/e/5/csm_Zeus_98077827e9.jpg",
+  "harvia-vega-compact": "https://pim.harvia.com/rockon-images/CIP/preview/image/3c5b6375-efcf-42bf-86ea-4ff1ab4796a9/435?maxsize=1000&format=jpeg&quality=8",
+  "harvia-kip": "https://www.datocms-assets.com/41658/1694090215-harvia_kip_w_steel_usa_f1_web.jpg",
+  "harvia-spirit": "https://www.datocms-assets.com/41658/1699262468-harvia_spirit_us_d1_sml.png",
+  "harvia-virta": "https://www.datocms-assets.com/41658/1621587135-harvia02-sauna-interior-indoors-western-europe-4closeupvirta-heater.jpg",
+  "harvia-globe": "https://pim.harvia.com/rockon-images/CIP/preview/image/3c5b6375-efcf-42bf-86ea-4ff1ab4796a9/460?maxsize=1000&format=jpeg&quality=8",
+  "harvia-senator": "https://pim.harvia.com/rockon-images/CIP/preview/image/3c5b6375-efcf-42bf-86ea-4ff1ab4796a9/467?maxsize=1000&format=jpeg&quality=8",
+  "harvia-cilindro": "https://www.datocms-assets.com/41658/1694418039-harvia_cilindroh_e_hpcs_safetyrailing_usa_f3_web.jpg",
+  "harvia-cilindro-pro": "https://pim.harvia.com/rockon-images/CIP/preview/image/3c5b6375-efcf-42bf-86ea-4ff1ab4796a9/1295?maxsize=1000&format=jpeg&quality=8",
+  "harvia-vega-pro": "https://pim.harvia.com/rockon-images/CIP/preview/image/3c5b6375-efcf-42bf-86ea-4ff1ab4796a9/2325?maxsize=1000&format=jpeg&quality=8",
+  "helo-cup": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-fi/pim-item-concept/uploads/10001/Cup-%20etu.png",
+  "helo-vienna": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-fi/pim-item-concept/uploads/11001/Vienna%20Black.jpeg",
+  "helo-hanko": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-fi/pim-item-concept/uploads/24002/Hanko%20Chrome.jpeg",
+  "helo-ringo": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-fi/pim-item-concept/uploads/14000/Helo%20Ringo%20black.jpg",
+  "helo-saunatonttu": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-fi/pim-item-concept/uploads/19000/Saunatonttu.jpeg",
+  "helo-himalaya": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-fi/pim-item-concept/uploads/16001/Himalaya%20Black.jpeg",
+  "helo-rocher": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-fi/pim-item-concept/uploads/15000/Rocher.jpg",
+  "helo-skle": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-fi/pim-item-concept/uploads/21000/SKLE1500x1000.png",
+  "helo-magma": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-fi/pim-item-concept/uploads/22000/Magma1500x1000.png",
+  "tylo-sense-sport": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-item-concept/uploads/10001/Sense-Sport-Black.png",
+  "tylo-sense-combi": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-item/uploads/61001570/61001570.jpg",
+  "tylo-expression": "https://cdn1.gung.io/fit-in/1500x1000/tylo/pim-item-concept/uploads/10001/Sense-Sport-Black.png",
+  "tylo-sense-commercial": "https://cdn1.gung.io/fit-in/1500x1000/tylo/61001092.jpg"
+};
 
-        function filterHeaters() {
-            return heaters.filter(h => {
-                // Search filter
-                const searchMatch = searchTerm === '' || 
-                    h.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    h.itemNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    h.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    h.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    `${h.powerKW}kw`.includes(searchTerm.toLowerCase());
+const itemToModelLine = {
+  "SAUNUM-EXP3.6": "saunum-experience",
+  "SAUNUM-EXP4.5": "saunum-experience",
+  "SAUNUM-EXP6": "saunum-experience",
+  "SAUNUM-EXP9": "saunum-experience",
+  "SAUNUM-EXP6-3P": "saunum-experience",
+  "SAUNUM-EXP9-3P": "saunum-experience",
+  "SAUNUM-EXP10.5-3P": "saunum-experience",
+  "SAUNUM-EXP12-3P": "saunum-experience",
+  "SAUNUM-SPA6": "saunum-spa",
+  "SAUNUM-SPA9": "saunum-spa",
+  "SAUNUM-PRO9": "saunum-pro",
+  "SAUNUM-PRO12": "saunum-pro",
+  "SAUNUM-PRO15": "saunum-pro",
+  "SAUNUM-LUX13": "saunum-luxury",
+  "SAUNUM-LUX16": "saunum-luxury",
+  "SAUNUM-LUX20": "saunum-luxury",
+  "SS1673NCB": "tulikivi-kaarna",
+  "Kaarnaclassickit3": "tulikivi-kaarna",
+  "SS1671NCB": "tulikivi-kaarna",
+  "Kaarnaclassickit1": "tulikivi-kaarna",
+  "SS1661NCB": "tulikivi-pyry",
+  "Pyrykit3": "tulikivi-pyry",
+  "SS1659NCB": "tulikivi-pyry",
+  "Pyrykit1": "tulikivi-pyry",
+  "Tuiskukit3": "tulikivi-tuisku",
+  "Tuiskukit1": "tulikivi-tuisku",
+  "2XSS036D": "tulikivi-tuisku-xl",
+  "TuiskuXLkit1": "tulikivi-tuisku-xl",
+  "2XSS037D": "tulikivi-tuisku-xl",
+  "TuiskuXLkit2": "tulikivi-tuisku-xl",
+  "2XSS038D": "tulikivi-tuisku-xl",
+  "TuiskuXLkit3": "tulikivi-tuisku-xl",
+  "SS1255D": "tulikivi-routa",
+  "Routakit1": "tulikivi-routa",
+  "SS1256D": "tulikivi-routa",
+  "Hallakit1": "tulikivi-halla",
+  "SS1260DB": "tulikivi-halla",
+  "SS036D": "tulikivi-dbody",
+  "Cliffkit3": "huum-cliff",
+  "Cliffminkit": "huum-cliff",
+  "Corekit3": "huum-core",
+  "SS038D": "huum-dbody",
+  "Hiveminikit3": "huum-hive-mini",
+  "Hivewoodminikit": "huum-hive-mini",
+  "Huum1": "huum-hive",
+  "Hivekit2": "huum-hive",
+  "Hivekit1": "huum-hive",
+  "Hivekit3": "huum-hive",
+  "Dropkit1": "huum-drop",
+  "Dropkit2": "huum-drop",
+  "Ikipillarkit3": "iki-pillar",
+  "Ikipillarprokit1": "iki-pillar-pro",
+  "Ikipillarprokit2": "iki-pillar-pro",
+  "Ikipillarprokit3": "iki-pillar-pro",
+  "Ikipillarprokit4": "iki-pillar-pro",
+  "94 8097": "eos-34g",
+  "94 8098": "eos-34g",
+  "94 8099": "eos-34g",
+  "94 7360": "eos-34g",
+  "94 7361": "eos-34g",
+  "94 7362": "eos-34g",
+  "94 7363": "eos-34g",
+  "94 2589": "eos-bio-star",
+  "94 4079": "eos-bio-star",
+  "94 3037": "eos-bio-star",
+  "94 7219": "eos-46u",
+  "94 7222": "eos-46u",
+  "94 6421": "eos-orbit",
+  "94 6422": "eos-orbit",
+  "94 6423": "eos-orbit",
+  "94 7826": "eos-goliath",
+  "94 7827": "eos-goliath",
+  "94 7828": "eos-goliath",
+  "94 7829": "eos-goliath",
+  "94 8116": "eos-herkules",
+  "94 8117": "eos-herkules",
+  "94 8118": "eos-herkules",
+  "94 8119": "eos-herkules-vapor",
+  "94 8120": "eos-herkules-vapor",
+  "94 8121": "eos-herkules-vapor",
+  "94 8094": "eos-mega-s",
+  "94 8045": "eos-mega-s",
+  "94 8044": "eos-mega-s",
+  "94 7735": "eos-mega",
+  "94 7736": "eos-mega",
+  "94 7737": "eos-mega",
+  "94 7738": "eos-mega",
+  "94 7739": "eos-mega",
+  "94 7837": "eos-zeus",
+  "94 7838": "eos-zeus",
+  "94 7839": "eos-zeus",
+  "94 7840": "eos-zeus",
+  "94 7849": "eos-zeus-l",
+  "94 7850": "eos-zeus-l",
+  "94 7851": "eos-zeus-l",
+  "94 7852": "eos-zeus-l",
+  "HARVIA-VEGA35": "harvia-vega-compact",
+  "HARVIA-KIP45": "harvia-kip",
+  "HARVIA-KIP60": "harvia-kip",
+  "HARVIA-KIP80": "harvia-kip",
+  "HARVIA-KIP90": "harvia-kip",
+  "HARVIA-KIP90-3P": "harvia-kip",
+  "HARVIA-SP60": "harvia-spirit",
+  "HARVIA-SP80": "harvia-spirit",
+  "HARVIA-VIR105": "harvia-virta",
+  "HARVIA-VIRPRO16": "harvia-virta",
+  "HARVIA-VIRPRO20": "harvia-virta",
+  "HARVIA-GL70": "harvia-globe",
+  "HARVIA-GL110": "harvia-globe",
+  "HARVIA-SEN9": "harvia-senator",
+  "HARVIA-SEN105": "harvia-senator",
+  "HARVIA-CIL60": "harvia-cilindro",
+  "HARVIA-CIL80": "harvia-cilindro",
+  "HARVIA-CIL90": "harvia-cilindro",
+  "HARVIA-CIL105": "harvia-cilindro",
+  "HARVIA-CILPRO10": "harvia-cilindro-pro",
+  "HARVIA-CILPRO13": "harvia-cilindro-pro",
+  "HARVIA-CILPRO16": "harvia-cilindro-pro",
+  "HARVIA-CILPRO20": "harvia-cilindro-pro",
+  "HARVIA-VP105": "harvia-vega-pro",
+  "HARVIA-VP135": "harvia-vega-pro",
+  "HARVIA-VP165": "harvia-vega-pro",
+  "HELO-CUP45": "helo-cup",
+  "HELO-CUP60": "helo-cup",
+  "HELO-CUP80": "helo-cup",
+  "HELO-CUP90": "helo-cup",
+  "HELO-VIE45": "helo-vienna",
+  "HELO-VIE60": "helo-vienna",
+  "HELO-VIE80": "helo-vienna",
+  "HELO-HANKO45": "helo-hanko",
+  "HELO-HANKO60": "helo-hanko",
+  "HELO-HANKO80": "helo-hanko",
+  "HELO-RINGO60": "helo-ringo",
+  "HELO-RINGO80": "helo-ringo",
+  "HELO-ST64": "helo-saunatonttu",
+  "HELO-ST80": "helo-saunatonttu",
+  "HELO-HIM68": "helo-himalaya",
+  "HELO-HIM105": "helo-himalaya",
+  "HELO-ROC68": "helo-rocher",
+  "HELO-ROC105": "helo-rocher",
+  "HELO-SKLE9": "helo-skle",
+  "HELO-SKLE105": "helo-skle",
+  "HELO-SKLE12": "helo-skle",
+  "HELO-SKLE15": "helo-skle",
+  "HELO-MAG18": "helo-magma",
+  "HELO-MAG21": "helo-magma",
+  "HELO-MAG26": "helo-magma",
+  "TYLO-SS22": "tylo-sense-sport",
+  "TYLO-SS45": "tylo-sense-sport",
+  "TYLO-SS66": "tylo-sense-sport",
+  "TYLO-SS80": "tylo-sense-sport",
+  "TYLO-SC45": "tylo-sense-combi",
+  "TYLO-EXP10": "tylo-expression",
+  "TYLO-EXC10": "tylo-expression",
+  "TYLO-COM66": "tylo-sense-commercial",
+  "TYLO-COM80": "tylo-sense-commercial",
+  "TYLO-COM107": "tylo-sense-commercial",
+  "TYLO-COM16": "tylo-sense-commercial",
+  "TYLO-COM20": "tylo-sense-commercial"
+};
 
-                // Category filter
-                let categoryMatch = true;
-                if (currentFilter === 'saunum') {
-                    categoryMatch = h.brand === 'Saunum';
-                } else if (currentFilter === 'tulikivi') {
-                    categoryMatch = h.brand === 'Tulikivi';
-                } else if (currentFilter === 'huum') {
-                    categoryMatch = h.brand === 'HUUM';
-                } else if (currentFilter === 'iki') {
-                    categoryMatch = h.brand === 'IKI';
-                } else if (currentFilter === 'eos') {
-                    categoryMatch = h.brand === 'EOS';
-                } else if (currentFilter === 'harvia') {
-                    categoryMatch = h.brand === 'Harvia';
-                } else if (currentFilter === 'helo') {
-                    categoryMatch = h.brand === 'Helo';
-                } else if (currentFilter === 'tylo') {
-                    categoryMatch = h.brand === 'Tylo';
-                } else if (currentFilter === 'single') {
-                    categoryMatch = h.phase === 'single';
-                } else if (currentFilter === 'three') {
-                    categoryMatch = h.phase === 'three';
-                }
+function getHeaterImage(itemNumber) {
+    const modelLine = itemToModelLine[itemNumber];
+    return modelLine ? heaterImages[modelLine] : null;
+}
 
-                // Volume filter (from calculator)
-                let volumeMatch = true;
-                if (calculatedVolume !== null && h.roomSizeMin && h.roomSizeMax) {
-                    volumeMatch = calculatedVolume >= h.roomSizeMin && calculatedVolume <= h.roomSizeMax;
-                } else if (calculatedVolume !== null && (!h.roomSizeMin || !h.roomSizeMax)) {
-                    volumeMatch = false; // Exclude heaters without room size data when filtering by volume
-                }
 
-                return searchMatch && categoryMatch && volumeMatch;
-            });
+// ===== STATE =====
+let calcVolume = null;
+let currentFilter = 'all';
+let searchTerm = '';
+let glassCount = 1;
+let expandedCard = null;
+
+// ===== BRAND COLORS =====
+const brandClass = {
+    'Saunum': 'brand-saunum', 'Tulikivi': 'brand-tulikivi', 'HUUM': 'brand-huum',
+    'IKI': 'brand-iki', 'EOS': 'brand-eos', 'Harvia': 'brand-harvia',
+    'Helo': 'brand-helo', 'Tylo': 'brand-tylo'
+};
+
+// ===== NAVIGATION =====
+function showView(id) {
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.getElementById('navCalc').classList.toggle('active', id === 'calcView');
+    document.getElementById('navBrowse').classList.toggle('active', id === 'resultsView');
+}
+
+document.getElementById('navCalc').addEventListener('click', () => showView('calcView'));
+document.getElementById('navBrowse').addEventListener('click', () => {
+    if (calcVolume === null) calcVolume = 0; // show all if no calc done
+    showView('resultsView');
+    renderResults();
+});
+document.getElementById('backBtn').addEventListener('click', () => showView('calcView'));
+
+// ===== GLASS ELEMENTS =====
+document.getElementById('addGlass').addEventListener('click', () => {
+    const container = document.getElementById('glassContainer');
+    const idx = glassCount++;
+    const el = document.createElement('div');
+    el.className = 'glass-element';
+    el.dataset.idx = idx;
+    el.innerHTML = `
+        <div class="glass-element-header">
+            <span class="glass-element-label">Window ${idx}</span>
+            <button class="glass-remove" onclick="this.closest('.glass-element').remove()">Remove</button>
+        </div>
+        <div class="dim-row">
+            <div class="dim-field">
+                <input type="number" class="gH" placeholder="0.0" step="0.1" min="0">
+                <label>Height (m)</label>
+            </div>
+            <div class="dim-field">
+                <input type="number" class="gW" placeholder="0.0" step="0.1" min="0">
+                <label>Width (m)</label>
+            </div>
+        </div>
+    `;
+    container.appendChild(el);
+});
+
+// ===== CALCULATOR =====
+document.getElementById('calcBtn').addEventListener('click', () => {
+    const l = parseFloat(document.getElementById('rL').value) || 0;
+    const w = parseFloat(document.getElementById('rW').value) || 0;
+    const h = parseFloat(document.getElementById('rH').value) || 0;
+
+    if (l <= 0 || w <= 0 || h <= 0) {
+        alert('Please enter valid room dimensions');
+        return;
+    }
+
+    const base = l * w * h;
+    let glassArea = 0;
+    document.querySelectorAll('.glass-element').forEach(el => {
+        const gh = parseFloat(el.querySelector('.gH').value) || 0;
+        const gw = parseFloat(el.querySelector('.gW').value) || 0;
+        glassArea += gh * gw;
+    });
+    
+    calcVolume = base + (glassArea * 1.5);
+    showView('resultsView');
+    renderResults();
+});
+
+// Enter key triggers calc
+document.querySelectorAll('#calcView input').forEach(inp => {
+    inp.addEventListener('keypress', e => { if (e.key === 'Enter') document.getElementById('calcBtn').click(); });
+});
+
+// ===== FILTERING =====
+function filterHeaters() {
+    return heaters.filter(h => {
+        // Volume match
+        let volMatch = true;
+        if (calcVolume > 0 && h.roomSizeMin && h.roomSizeMax) {
+            volMatch = calcVolume >= h.roomSizeMin && calcVolume <= h.roomSizeMax;
+        } else if (calcVolume > 0 && (!h.roomSizeMin || !h.roomSizeMax)) {
+            volMatch = false;
         }
 
-        function renderHeaters() {
-            const filtered = filterHeaters();
-            const grid = document.getElementById('heatersGrid');
-            const noResults = document.getElementById('noResults');
+        // Brand/phase filter
+        let filterMatch = true;
+        if (currentFilter === 'single') filterMatch = h.phase === 'single';
+        else if (currentFilter === 'three') filterMatch = h.phase === 'three';
+        else if (currentFilter !== 'all') filterMatch = h.brand.toLowerCase() === currentFilter;
 
-            if (filtered.length === 0) {
-                grid.innerHTML = '';
-                noResults.style.display = 'block';
-                return;
-            }
+        // Search
+        let searchMatch = true;
+        if (searchTerm) {
+            const s = searchTerm.toLowerCase();
+            searchMatch = h.name.toLowerCase().includes(s) || h.brand.toLowerCase().includes(s) ||
+                h.itemNumber.toLowerCase().includes(s) || h.type.toLowerCase().includes(s) ||
+                `${h.powerKW}kw`.includes(s);
+        }
 
-            noResults.style.display = 'none';
+        return volMatch && filterMatch && searchMatch;
+    });
+}
 
-            grid.innerHTML = filtered.map(h => `
-                <div class="heater-card ${h.brand === 'Saunum' ? 'saunum' : h.brand === 'Tulikivi' ? 'tulikivi' : h.brand === 'HUUM' ? 'huum' : h.brand === 'IKI' ? 'iki' : h.brand === 'EOS' ? 'eos' : h.brand === 'Harvia' ? 'harvia' : h.brand === 'Helo' ? 'helo' : h.brand === 'Tylo' ? 'tylo' : ''}">
-                    <div class="card-header">
-                        <div class="heater-name">${h.name}</div>
-                        <div class="power-badge">${h.powerKW} kW</div>
+// ===== RENDER =====
+function renderResults() {
+    const filtered = filterHeaters();
+    const list = document.getElementById('heaterList');
+    const noRes = document.getElementById('noResults');
+
+    // Update summary
+    if (calcVolume > 0) {
+        document.getElementById('volDisplay').innerHTML = calcVolume.toFixed(1) + '<span class="volume-unit"> m³</span>';
+    } else {
+        document.getElementById('volDisplay').innerHTML = 'All<span class="volume-unit"> heaters</span>';
+    }
+    document.getElementById('matchCount').innerHTML = `<strong>${filtered.length}</strong> heaters matched`;
+
+    if (filtered.length === 0) {
+        list.innerHTML = '';
+        noRes.style.display = 'block';
+        return;
+    }
+    noRes.style.display = 'none';
+
+    list.innerHTML = filtered.map((h, i) => {
+        const bc = brandClass[h.brand] || '';
+        const isExpanded = expandedCard === h.itemNumber;
+        return `
+        <div class="heater-card ${bc} ${isExpanded ? 'expanded' : ''}" data-item="${h.itemNumber}">
+            <div class="card-summary" onclick="toggleCard('${h.itemNumber}')">
+                <div class="card-img">
+                    <img src="${getHeaterImage(h.itemNumber) || ''}" alt="${h.name}" onerror="this.style.display='none';this.parentElement.classList.add('no-img')">
+                </div>
+                <div class="card-power">
+                    <span class="kw-num">${h.powerKW}</span>
+                    <span class="kw-unit">kW</span>
+                </div>
+                <div class="card-info">
+                    <div class="card-name">${h.name}</div>
+                    <div class="card-meta-row">
+                        <span class="card-tag brand">${h.brand}</span>
+                        <span class="card-tag">${h.phase === 'single' ? '1-Phase' : '3-Phase'}</span>
+                        ${h.roomSizeMin ? `<span class="card-tag">${h.roomSizeMin}-${h.roomSizeMax} m³</span>` : ''}
                     </div>
-                    
-                    <div class="card-meta">
-                        <span class="meta-tag brand">${h.brand}</span>
-                        <span class="meta-tag">${h.type}</span>
-                        <span class="meta-tag">${h.phase === 'single' ? '1-Phase' : '3-Phase'}</span>
-                    </div>
-                    
-                    <div class="specs-grid">
-                        <div class="spec-item">
-                            <div class="spec-label">Room Size</div>
-                            <div class="spec-value highlight">
-                                ${h.roomSizeMin && h.roomSizeMax ? `${h.roomSizeMin}-${h.roomSizeMax} m³` : 'N/A'}
+                </div>
+                <span class="card-chevron">▼</span>
+            </div>
+            <div class="card-detail">
+                <div class="detail-inner">
+                    <div class="detail-section">
+                        <div class="detail-section-title">⚡ Performance</div>
+                        <div class="spec-grid">
+                            <div class="spec-box highlight">
+                                <div class="spec-val">${h.roomSizeMin && h.roomSizeMax ? h.roomSizeMin + '–' + h.roomSizeMax + ' m³' : 'N/A'}</div>
+                                <div class="spec-label">Volume Range</div>
                             </div>
-                            <div class="spec-note">${h.roomNote || ''}</div>
-                        </div>
-                        
-                        <div class="spec-item">
-                            <div class="spec-label">Voltage</div>
-                            <div class="spec-value">
-                                <span class="phase-indicator ${h.phase === 'three' ? 'three-phase' : ''}">
-                                    <span class="phase-dot"></span>
-                                    ${h.voltage}V ${h.phase === 'three' ? '(3Ø)' : '(1Ø)'}
-                                </span>
+                            <div class="spec-box">
+                                <div class="spec-val">${h.powerKW} kW</div>
+                                <div class="spec-label">Power Output</div>
+                            </div>
+                            <div class="spec-box">
+                                <div class="spec-val">${h.voltage}V ${h.phase === 'three' ? '(3Ø)' : '(1Ø)'}</div>
+                                <div class="spec-label">Supply Voltage</div>
+                            </div>
+                            <div class="spec-box">
+                                <div class="spec-val">${h.amps.toFixed(1)} A</div>
+                                <div class="spec-label">Current ${h.phase === 'three' ? '(per phase)' : '(total)'}</div>
                             </div>
                         </div>
-                        
-                        <div class="spec-item">
-                            <div class="spec-label">Current Draw</div>
-                            <div class="spec-value">${h.amps.toFixed(1)} A</div>
-                            <div class="spec-note">${h.phase === 'three' ? 'Per phase' : 'Total'}</div>
-                        </div>
-                        
-                        <div class="spec-item">
-                            <div class="spec-label">Cable Size (AU)</div>
-                            <div class="spec-value highlight">${h.cableSize} mm²</div>
-                            <div class="spec-note">TPS/conduit</div>
-                        </div>
-                        
-                        <div class="spec-item">
-                            <div class="spec-label">Circuit Breaker</div>
-                            <div class="spec-value">${h.circuitBreaker} A</div>
-                            <div class="spec-note">MCB recommended</div>
+                    </div>
+                    <div class="detail-section">
+                        <div class="detail-section-title">🔌 Electrical Requirements</div>
+                        <div class="spec-grid">
+                            <div class="spec-box highlight">
+                                <div class="spec-val">${h.cableSize} mm²</div>
+                                <div class="spec-label">Cable Size (AU)</div>
+                            </div>
+                            <div class="spec-box highlight">
+                                <div class="spec-val">${h.circuitBreaker} A</div>
+                                <div class="spec-label">Circuit Breaker</div>
+                            </div>
                         </div>
                     </div>
-                    
+                    <div class="detail-section">
+                        <div class="detail-section-title">🛡️ Installation Notes</div>
+                        <div class="install-step">
+                            <span class="install-num">01</span>
+                            <span class="install-text"><strong>Fuse Protection:</strong> ${h.phase === 'three' ? '3 × ' + h.circuitBreaker + 'A MCB on 400V 3N~ supply' : h.circuitBreaker + 'A MCB on 230V supply'}</span>
+                        </div>
+                        <div class="install-step">
+                            <span class="install-num">02</span>
+                            <span class="install-text"><strong>Cable:</strong> ${h.phase === 'three' ? '5' : '3'} × ${h.cableSize} mm² TPS/conduit rated for sauna ambient</span>
+                        </div>
+                        <div class="install-step">
+                            <span class="install-num">03</span>
+                            <span class="install-text"><strong>Note:</strong> ${h.roomNote || 'Standard installation. Consult manufacturer guide.'}</span>
+                        </div>
+                    </div>
                     <div class="item-code">Item: ${h.itemNumber}</div>
                 </div>
-            `).join('');
-        }
+            </div>
+        </div>`;
+    }).join('');
+}
 
-        function updateStats() {
-            const filtered = filterHeaters();
-            document.getElementById('totalHeaters').textContent = filtered.length;
-            
-            if (filtered.length > 0) {
-                const minPower = Math.min(...filtered.map(h => h.powerKW));
-                const maxPower = Math.max(...filtered.map(h => h.powerKW));
-                document.getElementById('powerRange').textContent = `${minPower}-${maxPower}`;
-                
-                const roomHeaters = filtered.filter(h => h.roomSizeMin && h.roomSizeMax);
-                if (roomHeaters.length > 0) {
-                    const minRoom = Math.min(...roomHeaters.map(h => h.roomSizeMin));
-                    const maxRoom = Math.max(...roomHeaters.map(h => h.roomSizeMax));
-                    document.getElementById('roomRange').textContent = `${minRoom}-${maxRoom}`;
-                } else {
-                    document.getElementById('roomRange').textContent = 'N/A';
-                }
-            } else {
-                document.getElementById('powerRange').textContent = '-';
-                document.getElementById('roomRange').textContent = '-';
-            }
-        }
+function toggleCard(itemNumber) {
+    expandedCard = expandedCard === itemNumber ? null : itemNumber;
+    renderResults();
+    if (expandedCard) {
+        setTimeout(() => {
+            const card = document.querySelector(`[data-item="${itemNumber}"]`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    }
+}
 
-        // Event listeners
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            searchTerm = e.target.value;
-            renderHeaters();
-            updateStats();
-        });
+// ===== FILTER PILLS =====
+document.getElementById('filterRow').addEventListener('click', e => {
+    const pill = e.target.closest('.filter-pill');
+    if (!pill) return;
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    currentFilter = pill.dataset.f;
+    expandedCard = null;
+    renderResults();
+});
 
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentFilter = btn.dataset.filter;
-                calculatedVolume = null; // Reset calculator filter when changing filters
-                document.getElementById('calcResults').style.display = 'none';
-                document.getElementById('volumeFilterStat').style.display = 'none';
-                renderHeaters();
-                updateStats();
-            });
-        });
+// ===== SEARCH =====
+document.getElementById('searchInput').addEventListener('input', e => {
+    searchTerm = e.target.value;
+    expandedCard = null;
+    renderResults();
+});
 
-        // Room Calculator
-        const GLASS_MULTIPLIER = 1.5; // 1.5m³ per m² of glass
-        let glassElementCount = 1;
-
-        function addGlassElement() {
-            const container = document.getElementById('glassElements');
-            const index = glassElementCount;
-            glassElementCount++;
-
-            const row = document.createElement('div');
-            row.className = 'glass-row';
-            row.dataset.index = index;
-            row.innerHTML = `
-                <div class="glass-row-header">
-                    <span class="glass-row-label">Window ${index}</span>
-                    <button class="remove-glass-btn" onclick="removeGlassElement(${index})">✕ Remove</button>
-                </div>
-                <div class="input-row">
-                    <div class="input-field">
-                        <input type="number" class="glass-h" placeholder="0.0" step="0.1" min="0">
-                        <span class="input-unit">m height</span>
-                    </div>
-                    <div class="input-field">
-                        <input type="number" class="glass-w" placeholder="0.0" step="0.1" min="0">
-                        <span class="input-unit">m width</span>
-                    </div>
-                </div>
-            `;
-            container.appendChild(row);
-
-            // Add Enter key listener to new inputs
-            row.querySelectorAll('input').forEach(input => {
-                input.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter') calculateVolume();
-                });
-            });
-        }
-
-        function removeGlassElement(index) {
-            const row = document.querySelector(`.glass-row[data-index="${index}"]`);
-            if (row) row.remove();
-        }
-
-        function getTotalGlassArea() {
-            let totalArea = 0;
-            document.querySelectorAll('.glass-row').forEach(row => {
-                const h = parseFloat(row.querySelector('.glass-h').value) || 0;
-                const w = parseFloat(row.querySelector('.glass-w').value) || 0;
-                totalArea += h * w;
-            });
-            return totalArea;
-        }
-
-        document.getElementById('addGlassBtn').addEventListener('click', addGlassElement);
-
-        function calculateVolume() {
-            const length = parseFloat(document.getElementById('roomLength').value) || 0;
-            const width = parseFloat(document.getElementById('roomWidth').value) || 0;
-            const height = parseFloat(document.getElementById('roomHeight').value) || 0;
-
-            if (length <= 0 || width <= 0 || height <= 0) {
-                alert('Please enter valid room dimensions (length, width, and height)');
-                return;
-            }
-
-            const baseVolume = length * width * height;
-            const glassArea = getTotalGlassArea();
-            const glassAddition = glassArea * GLASS_MULTIPLIER;
-            const totalVolume = baseVolume + glassAddition;
-
-            // Update results display
-            document.getElementById('baseVolume').textContent = baseVolume.toFixed(1) + ' m³';
-            document.getElementById('glassArea').textContent = glassArea.toFixed(1) + ' m²';
-            document.getElementById('glassAddition').textContent = '+' + glassAddition.toFixed(1) + ' m³';
-            document.getElementById('totalVolume').textContent = totalVolume.toFixed(1) + ' m³';
-
-            // Store calculated volume for filtering
-            calculatedVolume = totalVolume;
-
-            // Show volume filter indicator in stats bar
-            document.getElementById('volumeFilterStat').style.display = 'block';
-            document.getElementById('filterVolume').textContent = totalVolume.toFixed(1);
-
-            // Count suitable heaters
-            const suitableHeaters = heaters.filter(h =>
-                h.roomSizeMin && h.roomSizeMax &&
-                totalVolume >= h.roomSizeMin && totalVolume <= h.roomSizeMax
-            );
-
-            document.getElementById('suitableCount').innerHTML =
-                `<span class="count-number">${suitableHeaters.length}</span> heaters suitable for your sauna`;
-
-            // Show results
-            document.getElementById('calcResults').style.display = 'block';
-
-            // Reset other filters and show suitable heaters
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
-            currentFilter = 'all';
-            searchTerm = '';
-            document.getElementById('searchInput').value = '';
-
-            // Re-render with volume filter
-            renderHeaters();
-            updateStats();
-
-            // Scroll to results
-            document.getElementById('heatersGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        function clearCalculator() {
-            document.getElementById('roomLength').value = '';
-            document.getElementById('roomWidth').value = '';
-            document.getElementById('roomHeight').value = '';
-            // Reset glass elements back to just the door
-            const container = document.getElementById('glassElements');
-            container.innerHTML = `
-                <div class="glass-row" data-index="0">
-                    <div class="glass-row-header">
-                        <span class="glass-row-label">Glass Door</span>
-                    </div>
-                    <div class="input-row">
-                        <div class="input-field">
-                            <input type="number" class="glass-h" placeholder="0.0" step="0.1" min="0">
-                            <span class="input-unit">m height</span>
-                        </div>
-                        <div class="input-field">
-                            <input type="number" class="glass-w" placeholder="0.0" step="0.1" min="0">
-                            <span class="input-unit">m width</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-            glassElementCount = 1;
-            document.getElementById('calcResults').style.display = 'none';
-            document.getElementById('volumeFilterStat').style.display = 'none';
-            calculatedVolume = null;
-            renderHeaters();
-            updateStats();
-        }
-
-        document.getElementById('calculateBtn').addEventListener('click', calculateVolume);
-        document.getElementById('clearCalcBtn').addEventListener('click', clearCalculator);
-        document.getElementById('clearVolumeFilter').addEventListener('click', clearCalculator);
-
-        // Allow Enter key to trigger calculation
-        document.querySelectorAll('#calculatorSection input').forEach(input => {
-            input.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    calculateVolume();
-                }
-            });
-        });
-
-        // Initial render
-        renderHeaters();
-        updateStats();
-    </script>
+</script>
 </body>
 </html>
