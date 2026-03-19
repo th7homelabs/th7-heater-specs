@@ -1,0 +1,4009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- iOS PWA / Home Screen App -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TH7 Heaters">
+    <meta name="theme-color" content="#24231a">
+    <link rel="apple-touch-icon" href="data:image/png;base64,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">
+    
+    <!-- PWA Manifest (inline) -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIlRINyBTYXVuYSBIZWF0ZXIgU3BlY3MiLCAic2hvcnRfbmFtZSI6ICJUSDcgSGVhdGVycyIsICJzdGFydF91cmwiOiAiLiIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMjQyMzFhIiwgInRoZW1lX2NvbG9yIjogIiMyNDIzMWEiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFMUUFBQUMwQ0FZQUFBQTl6UVl5QUFBUWprbEVRVlI0bk8zZFNYQWMxM25BOGU5N3I1ZVo2Y0VzMkltRnBFZ1FKS09JRWlsS2xtakw1Q1d4ZlVvVUs3azVOOG4yeGJtbVhDbGxPOXR4SmFvVVpWWEpCK3VTVXlRbnFiSlRzUlVuRlZteXhWMGJDWUlFQVJJQVFRSVl6RDdkNzcwdmg4RndFU2tLQkdZQm5yN2ZFZVIwdjJuODBkUDc0Tmp1SVFMR0xDRTZQUURHbW9tRFpsYmhvSmxWT0dobUZRNmFXWVdEWmxiaG9KbFZPR2htRlE2YVdZV0RabGJob0psVk9HaG1GUTZhV1lXRFpsYmhvSmxWT0dobUZRNmFXWVdEWmxiaG9KbFZPR2htRlE2YVdZV0RabGJob0psVk9HaG1GUTZhV1lXRFpsYmhvSmxWT0dobUZRNmFXWVdEWmxiaG9KbFZPR2htRlE2YVdZV0RabGJob0psVk9HaG1GUTZhV1lXRFpsYmhvSmxWT0dobUZRNmFXWVdEWmxiaG9KbFZPR2htRlE2YVdZV0RabGJob0psVk9HaG1GUTZhV1lXRFpsYmhvSmxWT0dobUZRNmFXWVdEWmxiaG9KbFZuRTRQZ0hXZUVLaU5JZGsva256MzBjT0RJN1dxVXMyYTlqcy9uOXJackdtdEJRZk5nQWdJQU1CeFpaVE0rQ05lUllJZmR6czlySFhob05rdFJJUkVRTVZDTkhmaDNNMExUWnJzc1NaTlowMDRhSFliQVVwSFlLMnFsaTUvdEhpczA4TlpEdzZhM1lVTWdlT0tSTG83OW1FenByZXlWSDIwR2ROWkt3NmEzWVpBV2hrSWt1Nk9MLzNCRHRtTVNmN252NXh2eG1UV3JPMUJJeUlCMUhkQ3Rnb0VBQUpBSXNKYlAxdjcrN2pyZGEzU3JQRWdJZ0FnRW0ycFg5RXRPTFo3YUd1T25EVVRBUUM2bmxpSkpid2J4dERxMy9ERFF5UURnQUFJUUFaRUtWOGJhKzVRSDZ6dGEraWVucDdyUWdqVDd2bXVHeEdpRUtaV3JjVlc4aXZkalI5bnM5bWJydXVHWkl5QSt0cngwNjhEUkFSdGpGeGFXdXByNVZvYUVhbTd1L3VHRkVJVEVRRGVaMWFyN3lPS0ltOTVlYm4zMDVNQUFJaENrNDdDYXJwVjQyeUh0Z2Y5NDFkZmhYUTZtVmJLME9ybjI2Wm10RGJwZEViKzhwZi9kZWJsdi82Ylo2U1VXbXN0Ly83di9uYjJ3SUhIOXBSS1pZTkMzUE0reUJERjR4NWVtWjZaZi9IRmwxSmhHTVVRa1pvWmRtTjZydXZXZnZTamZ5aVBEQS8xMTJyaGZaY3JHV09DSUpDbno1eVorTjczL3FMM004WkNlTDgvempVZ0FBTkV6c0JJOGpmWmdTQ3NsVUthdnBoN1dpdEtyT3ZOclZQYmc0N0hZMEVpRVNTME5rQkVvTFhldEpzOGp1T2dNUnFTeVFUNHZuL1hUbExNajNuSlpCQUhBRUFVb0pTNjlUNmtsQWlBRUl0NUVJc2xZdTBZYXp3ZWl5VVNRY0p4M0h1V3ErTTRTR1FnbVF3Z0Zvczk2SXpKK3JiM0VRZ0lwT3ZKcGYySEJ4N3QzNVpLZlh4cS9qZGFVM3c5NzJVajJoNjBNVm9wcFVncFRmRjRYS1JTWFZqZmdtdjNTRDVmb1ZBRXBiU0tJaVdOTm5mOTRXbWpUUlFwaWlKdGZGL0tiRGFEalUvN2Nya01sVXBOTzQ0UXhtamRqckZxYll4U2lxSW9NckdZTCs5Y3JzVmlDY0t3L2o2MDFrM2YzRU5BVFVETzBNN1V1YURMUDNyemVxRTArY0hOSWFEMi8xWTdjWlFEQVJCOTM0ZnpGODVmUEh2MjNKeVVEbXlxQXgrR0FBVEMwYU5mUFpBTWtsMklpSUIzLzNKd2xlYzVZbUZoNGZxL3Z2bk9CVWM2cUxTaXcwOCt1V04wZEhTMDhiL2FOV3hFUk4vM3hOVFVsZWtUSjA5ZWtVS2lNWnFPSERreTN0dmIyOWNZYzVOblMwUWtwU05LSTJPWk1TRUZMTXlXenBhTDBiTk5ucythZE9RNHROYWEwdWswdnZ2dWI2OGRQMzc4YUNmR3NCYVBQdnA3RjN1NmU5S2ZkUWpMR0lKNFBJNlhweTdQL3VBSFAzeXU4ZlB2Zi84di8yL2Z2cjNiUzZWeTI4WmFINCtCSUVqZzJYTm5wKzhjencrSFIwNk5qbzRPR05QOER3dEUxRVRrYk51ZU9wbnBpVDlYTFlkNjVzSnlDZ0FvMHhzL203dFplYnpwTTMyQWpwMVlJU0x3UFI5ZDF3bWxrRW9idmU2eEVCRWFjM3NOS2dTYXhucUlDTUFZRXJmLzdjRTdQbzJkSlNHRUVVS0t6enNlUzBUZ09LNFFRaXJYZGFJb1VxN3JlSi83dWxZaEluQmRUd2dobGVQSVNDbnRPbzZVclJvUEFVa1VFQTd2VGc5SktlakdiT25VeWxMMU1DS2FYZnU3OWNuL3ZkYVMrWDZXamdXTmlCQ0dJVVdSOGlKUVhqT25iUjZ3bGZpZ2Y3djMvNjUxZTVQQUdPMW9qV1NNZGdoTVI3ZWZpQnJqZ2ZwNFdsVXpvZ0lpcDMrazYwUjNmK0xaV2xYQjlNU3lBQURLOXNYTzlvOTBIV3JKZkIrZ0kwRTdqc1JDb1VESGpoMGRlMlRuanZkUkNselBRamRhVTZxclMvNzhGNzhvL2V6Zi92MDVLUjJsdFhLKys1M3YvSHJ2M3IxSlFJS0xGeThWWDNubGxhT053MjB2dlBETlh4ODdkcXlyV0N4b0llUTkyNU9OTXdvSUFJTURnL3RydGRERVlqN2ZDSEVmQ0NBQXdZenV5YVJjVjlLMWE3a1BsaGNxVHdBQWpvNWxReUZGMjNmMzJ4NDAxWmtvQ21sa1pIaDQ5KzVkd3c4N0RRUUFGQWhLYWNqMjlNREZ5Y24vQVFCQUJBTUE4T1NoZ3dOZi9zcFg5aEVaeUdUZXY3ajZLZ0lBMkx0M24vTzFyLzNob2FYRkpaRHl3WmNybE10bENNTXdNb1lBYURQdHRYWWVDdFJrU1BZTUp0N3ZIUWdPaDVHR21ZbGNpWWd3bWZFdjlJMGtEMFdodHY4b2grZDZYaXdXRTBwcEFDQ29WcXZybUFwQkdDcXR0VktPSTUxcXRYcFhiS1Z5cFpiTDVUU1JnWEtwZE5jTXRJcW9XcWxBcFZJaHgzRWV1TUFkeHdFaGhCdUx4Y0J4bktaY3JHT04xZVBWMjhlN2hlYzdOSDgxUDNGanJuZ0lBSEQ3bnN4Q0xPNk81eGJMMXdGZ29KM0RhbnZRYy9Qejg4VlNPV0cwSWhRUGZ3aUpESkdRVW1TejNYMUNTQ21sbENqdTNpSVFRcUNVVWhJaGZQb3Mza3Erb0dkblorZFhWdkphU3ZHNWtTcHRUS0ZRRkV2TFM1V0hIYXV0Vm85c3lIUlAvSU9ld2VBSnBRek9YTXd0a0lIeFJOS2RHaHhOSFRMYXdNeEU3aE93UGVnWFgvcjJFT0o2TDN4Qk1vWkVKcE5aK3NsUFhpOGxnNkJyclp2ZXhtZ0pBUERhYTY4ZGVmMzExOVhESGZkRzBGby9EUUNndGVidDZWWGJ4elBGUk1MRm0vUEZxWVdaNGtFQWdKSGRtU3ZKdEw5ejhYcnAyclZMS3dmYlBhYTJCeDJHNFlaUEJWZXIxWFZQUXlubEtxVzI1ZzF6bThEcTJsbDBwYjJKL3VHdVExb1R6a3ptcm1odGR2cHhaMzdienRRQklvRFpTeXNUS2pMSDJqMitUbDBQdmU3WEVoRktLVGQwK25aOVl5Q2dEcHpLM2FSd2RFL21lcEQwOWl6ZktNM1BYY2tmQUFBWWZpVDlTU29UUDViUFZaYXVYVjU1REtEOUZ6VjA0aWpIaHQ1Zy9VYk9qVTlqSTYvL29rSUVRMFFpbG5CbkJyYW5EaHBEY08xeS9oTVZtbU9PSjVlSGQ2WDJJUUxNWHNxZkMydjZLQ0lxSW1wclk3dzl5TlpzOVpNTnQrL0pYRXAyK1VFK1YxbTZkaW0zSHdCZ2FFZlgyWFIzWXJDUXJ4Wm5MdWIyQUFBQlVOdjc0cURaMmlBWVkwaDRNZWZHdHAycEF3QUE4OVBGYzdXcUhoQlNsRVoycFhjS2lUQTNsVDlWTFVkREtOQVF0Yjh2RHBxdENRSWFBTURoWGVrUHV6S3hiREZmSzgxTUxEOENBREE0bWp5VjdROTJsUEpoZFdZaU53ejFIWTZPYk5aeDBHd3RpSWlrNDRyOHlDT3BmUUlSNXFZTEp5dWxhRHNLREVmR3NuMk9JMkgrYXVGa3FSRHVRdXpNMmhtQUgyUFFDZFNzUzVJYlIyczJjdVJvamZPcFh5SzZNM1VxMVJNL1dpcldhbGNuY3dNQVFIMUR5Wk05QTRsbnlxVlFUVjlZemtLSEwyem5vTnV2YVk4SWFCeXRVVXEzOHJnNkVaQVVFcXVqdXpNN3BCQjAvV3JoVkRGWGV3WVJ6TWhZT3VINURzMU9MWjRxTEZlZnFxK2RxV09YQ1hEUWJlWjViczN6L0NxUndZMGVvbTBjbC9jOEw1U0lMZm1JYjZ5ZEIwYTZUbVI2RTErdWxDTjlkU0lYQUFCbCt4T24rN2NsRDFZckVVNWZXSzcvVVdGbkwrUGlvTnRFQ0dHTU1lTDU1Ly9rM2U5Kys2WEhGcGVXSWlrM2ZzRlQvY3dGWVNxZDdnL0RVQVZCME9UZktVa1VxRWZITXoyT0kyajJ5c3JwM0dMMVNRQ0EwYkdNOXVNdVhKMWNQck44by9JRUloZ3luVnM3QTNEUWJaZUl4Nm0zcjdmYkFCalhjWnF5VmlVaVVFcHJZN1RTOWJzTW1yS09iRndpMnJjdE9OSFRGendkMWhUTVRPUUFFQ2lWOVQvcUgwNGVER3NLcjF4WXJnSGMrc1JveHF6WGpZTnVNOGR4d0k4SEVDVEt3bldidC9nUlVXcXRaVHFiaFhnaTNwd0pyMjZqajQ1bllwNHZZWFlxLzhIaTlmTGpRSUNqWTVtVlJOSjM1cTZzZkxJNFgzNFNFZWpPVzkwNmhZTnVrOFlPM09Ua3BQOGZQM3Zydlh5aFFFTGVlOGZNUmhodEtKa004TXlaczlYNlBOZS9rZDY0UkRUYkZ6L2R0eTM1ZUxXaXpOVDVwUklRT2NtMGQzRndOSDFJUlJxbUozS0xSTFFQRUJWQWUwOXozMC9IQi9CRlFVU0lpUFNydDk5KzlsZHZ2OTJtdVpxTnJESHJGL0R2eVlZQ1VWZXJVYlJqWDNld2ZUeDcxbzg1YWRlWDd2S044dFRDMWNMaCtvNWdaN2VkR3pqb05oQkNhaUdNUWdTcVA1VkVORFkwbTd6QlNWZy9SMDFDYTdYdTMyMWoyem5iRnorOVk3ejdhYTBOQkYyK2srNk8vejVBL2RZMzE1WHc0WHR6MDhiUVRrUlV0QW5XemdBY2RNc1pZNmhhclFaMy83UXREMU5hdjlWTkZlRmdkUDcwd245SGtWazlHb2UzL3BFSVlIWXEveFNzbmtYczZIanZ3RUczQ0NKQ0ZDblRuYzEydi96eVg3MmpOUkhXNzlSdDJXRUFNZ2FDSU1EZnZmODc5ZWFiYjMwVlFCaUFoNy9EaHFpK2M3YzRWMzVxY2E2OUQ4dlpLQTY2QlZZZmJrUEdhSjFJSklMbi8raVBqN1Q2TW5kRUJLMDFwRExkQUdqZWUvUE50MkM5dDdyZG5pWVlxRitVZEYrcmErWk5kVzA1QjkwQ1VrajBQQmVkK2lPVklGOG90SHllV210dGpJNE1nVk11VlpyeVBZUDFDNHc2ZnlqdVlYRFFMVkN0VnZUS3lrcWhVQ2dvRktMbHl4Z0JJQjVQQkVLQTQwanAzTzk1MVY4VUhIUVRHV01rQU1BLy90TXJUeHgvOWNmaDZsbXpxRlh6dStPQjUrSHg0LzljR2h3WUhDVGFPbCtPMEFvY2RBdVV5K1ZrdWR5K25hbjZZODdNOWJiTmNCUGpvTnVnVmRjck45YlFqdU9FclpqK1ZzUkJOMUVqM0gzNzluNjBiV2hiUVNzRDFVckZlZi9FaVlQR2JPaXMzV2RxeGwzd051R2dtd2dSRFFESVAvL1d0NHAvK21jdmZLbGNxc0QwOVBUU04xOTRJUXhEMC9RdkRXTDM0cUJib0Z5cHFOeHlUcGZMRlNnVWkwVUFhT3MzUVgyUmNkQXRJQVJDL1RHU0VvUVFXK280N2xiSEM1dFpoWU5tVnVHZ21WVTRhR1lWRHBwWmhZTm1WdUdnbVZVNGFHWVZEcHBaaFlObVZ1R2dtVlU0YUdZVmE0SmVmWWdMYmZSTzU2MDYvMC9iYk9OcEZ5dUNYbjN3Q1JwRG9sUGZKVmlmUDNScy9wKzIyY2JUTGxaY1BvcUlJSVRRanVNb0loTFlyTzk4V1BzSVZ1Y3ZGSkZBaE03ZWRYMTdlVWlsRkdIN2wwZm5iT21ncFpTd3NwS25iM3pqNndlZlBYSmtGaEdCaUtDdnQyZFB1VnpXUVJDMDlCRlZVZ29vRnN0bS8vNTllOTk0NDZlMzV0K2R6UjdJNTR2Rzk3MjJmZ0pLS2FGUUtKb2p6eDU1L0kwM2ZqcUxxdy93NnV2dEdXL0g4dGdNdG16UVJHUzBOa1pyVFYxZHFWUTJtMDBSQVNBQ2hHRUVTcWxJYTRQUW9nZHdFeEZwclkweDJ2aWVIM3RrNTQ3Unh2eWpTRUVVS1dXTWdUWStBWnhXbDRjSmdrU1F5YVNDK3kyUGpqK1J2TVcyWk5DSVNMNGZpd2RCWENpbEFLQytabXg4c1BxK0Q1N251a0dRQU0veld2S0ZPcDdudVVFUWlQb21qcmhyL3A3bmdldTZUanp1Zys5N1hpdm1mKzk0M0ZnUXhJWGpDUEhnNWVHMzhndUdPbTVMQnExVTVIejg4VWVmSkpOSlR5bDEzejFiUTBUeGVFSk9UbDY2QVFEanpSN0R4Y2xMQzQ3alVLVlMwZUkrMjZnR2dIelBGWE56ODNraWVyelo4NzhURVlrTDV5Y3U1M0lyTjFVVTNmZmJpQnJMNDlMa1pFdVd4MmFCWTd1SHJQNElZbDhzVmh5Mlk2eUJnMlpXNGFDWlZUaG9aaFVPbWxtRmcyWlc0YUNaVlRob1poVU9tbG1GZzJaVzRhQ1pWVGhvWmhVT21sbUZnMlpXNGFDWlZUaG9aaFVPbWxtRmcyWlc0YUNaVlRob1poVU9tbG1GZzJaVzRhQ1pWVGhvWmhVT21sbUZnMlpXNGFDWlZUaG9aaFVPbWxtRmcyWlc0YUNaVlRob1poVU9tbG1GZzJaVzRhQ1pWVGhvWmhVT21sbUZnMlpXNGFDWlZUaG9aaFVPbWxtRmcyWlc0YUNaVlRob1poVU9tbG1GZzJaVzRhQ1pWVGhvWmhVT21sbUZnMlpXNGFDWlZUaG9aaFVPbWxtRmcyWlc0YUNaVmY0ZjBnWW1RYWhFQWZjQUFBQUFTVVZPUks1Q1lJST0iLCAic2l6ZXMiOiAiMTgweDE4MCIsICJ0eXBlIjogImltYWdlL3BuZyJ9XX0=">
+    <title>TH7 Sauna Heater Specifications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* TH7 Brand Colors */
+            --charcoal: #24231a;
+            --white: #ffffff;
+            --steam: #e5e3d9;
+            --asher: #58595b;
+            --sage: #617332;
+            
+            /* Mapped to UI roles */
+            --bg-dark: var(--charcoal);
+            --bg-card: #2d2c22;
+            --bg-card-hover: #363529;
+            --accent-primary: var(--sage);
+            --accent-secondary: #7a8f42;
+            --text-primary: var(--steam);
+            --text-secondary: #a8a69c;
+            --text-muted: var(--asher);
+            --border: #3d3c32;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 50px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon img {
+            display: block;
+            height: 60px;
+            width: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--steam);
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 500px;
+            min-width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px 16px 52px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(97, 115, 50, 0.25);
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+        }
+
+        .filter-btn {
+            padding: 14px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--text-muted);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+        }
+
+        .filter-btn.saunum.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        .stat-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 4px;
+        }
+
+        .heaters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 20px;
+        }
+
+        .heater-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .heater-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--text-muted);
+            transform: translateY(-2px);
+        }
+
+        .heater-card.saunum {
+            border-left: 3px solid var(--accent-primary);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .heater-name {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.4;
+            flex: 1;
+            padding-right: 16px;
+        }
+
+        .power-badge {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 8px 14px;
+            background: var(--accent-primary);
+            border-radius: 6px;
+            white-space: nowrap;
+            color: var(--white);
+        }
+
+        .heater-card.saunum .power-badge {
+            background: var(--accent-secondary);
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .meta-tag {
+            font-size: 0.75rem;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .meta-tag.brand {
+            background: rgba(97, 115, 50, 0.2);
+            color: var(--accent-primary);
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .spec-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .spec-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+
+        .spec-value {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .spec-value.highlight {
+            color: var(--accent-primary);
+        }
+
+        .spec-note {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .phase-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .phase-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+        }
+
+        .phase-indicator.three-phase .phase-dot {
+            background: var(--steam);
+        }
+
+        .item-code {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-secondary);
+        }
+
+        .no-results h3 {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .disclaimer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .disclaimer strong {
+            color: var(--accent-primary);
+        }
+
+        /* Room Calculator Styles */
+        .calculator-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .calculator-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .calculator-header h2 {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--steam);
+            margin-bottom: 8px;
+        }
+
+        .calculator-header p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 24px;
+        }
+
+        .calc-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .calc-label {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .input-field {
+            flex: 1;
+            min-width: 100px;
+            position: relative;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 14px 12px;
+            padding-bottom: 28px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .input-field input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(97, 115, 50, 0.25);
+        }
+
+        .input-field input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .input-unit {
+            position: absolute;
+            bottom: 8px;
+            left: 12px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .glass-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .glass-row {
+            margin-bottom: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .glass-row-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .glass-row-label {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .remove-glass-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .remove-glass-btn:hover {
+            border-color: #d44040;
+            color: #d44040;
+        }
+
+        .calculator-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .calc-btn {
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .calc-btn.primary {
+            background: var(--accent-primary);
+            border: 1px solid var(--accent-primary);
+            color: white;
+        }
+
+        .calc-btn.primary:hover {
+            background: var(--accent-secondary);
+            border-color: var(--accent-secondary);
+        }
+
+        .calc-btn.secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .calc-btn.secondary:hover {
+            border-color: var(--text-muted);
+            color: var(--text-primary);
+        }
+
+        .calculator-results {
+            background: var(--bg-dark);
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .result-card {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 16px;
+            background: var(--bg-card);
+            border-radius: 6px;
+        }
+
+        .result-item.total {
+            background: rgba(97, 115, 50, 0.2);
+            border: 1px solid var(--accent-primary);
+        }
+
+        .result-label {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .result-value {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--steam);
+        }
+
+        .result-item.total .result-value {
+            color: var(--accent-primary);
+        }
+
+        .suitable-count {
+            text-align: center;
+            padding: 16px;
+            background: var(--bg-card);
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-secondary);
+        }
+
+        .suitable-count .count-number {
+            font-family: 'Oxanium', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-right: 8px;
+        }
+
+        .volume-filter-active {
+            display: inline-block;
+            background: var(--accent-primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-left: 12px;
+            cursor: pointer;
+        }
+
+        .volume-filter-active:hover {
+            background: var(--accent-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .calculator-section {
+                padding: 20px;
+            }
+            
+            .input-row {
+                flex-direction: column;
+            }
+            
+            .input-field {
+                min-width: 100%;
+            }
+            
+            .calculator-actions {
+                flex-direction: column;
+            }
+            
+            .calc-btn {
+                width: 100%;
+            }
+        }
+
+        .brand-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        .legend-dot.saunum {
+            background: var(--accent-primary);
+        }
+
+        .legend-dot.other {
+            background: var(--asher);
+        }
+
+        .heater-card.tulikivi {
+            border-left: 3px solid #b5873a;
+        }
+
+        .heater-card.tulikivi .power-badge {
+            background: #b5873a;
+        }
+
+        .heater-card.huum {
+            border-left: 3px solid #4a90a4;
+        }
+
+        .heater-card.huum .power-badge {
+            background: #4a90a4;
+        }
+
+        .heater-card.iki {
+            border-left: 3px solid #9b5de5;
+        }
+
+        .heater-card.iki .power-badge {
+            background: #9b5de5;
+        }
+
+        .heater-card.eos {
+            border-left: 3px solid #d44040;
+        }
+
+        .heater-card.eos .power-badge {
+            background: #d44040;
+        }
+
+        .heater-card.harvia {
+            border-left: 3px solid #c74b16;
+        }
+
+        .heater-card.harvia .power-badge {
+            background: #c74b16;
+        }
+
+        .heater-card.helo {
+            border-left: 3px solid #2b7bbf;
+        }
+
+        .heater-card.helo .power-badge {
+            background: #2b7bbf;
+        }
+
+        .heater-card.tylo {
+            border-left: 3px solid #8b5e3c;
+        }
+
+        .heater-card.tylo .power-badge {
+            background: #8b5e3c;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .heaters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                gap: 20px;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-box {
+                max-width: 100%;
+            }
+
+            .filter-btn {
+                flex: 1;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"><img src="data:image/png;base64,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" alt="TH7 HomeLabs"></div>
+                <h1>sauna heater specifications</h1>
+            </div>
+            <p class="subtitle">Australian Electrical Requirements & Room Sizing Guide</p>
+        </header>
+
+        <!-- Room Size Calculator -->
+        <div class="calculator-section" id="calculatorSection">
+            <div class="calculator-header">
+                <h2>room size calculator</h2>
+                <p>Enter your sauna dimensions to find suitable heaters</p>
+            </div>
+            
+            <div class="calculator-grid">
+                <div class="calc-group">
+                    <label class="calc-label">Room Dimensions</label>
+                    <div class="input-row">
+                        <div class="input-field">
+                            <input type="number" id="roomLength" placeholder="0.0" step="0.1" min="0">
+                            <span class="input-unit">m length</span>
+                        </div>
+                        <div class="input-field">
+                            <input type="number" id="roomWidth" placeholder="0.0" step="0.1" min="0">
+                            <span class="input-unit">m width</span>
+                        </div>
+                        <div class="input-field">
+                            <input type="number" id="roomHeight" placeholder="0.0" step="0.1" min="0">
+                            <span class="input-unit">m height</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calc-group">
+                    <label class="calc-label">Glass Elements (doors & windows)</label>
+                    <div id="glassElements">
+                        <div class="glass-row" data-index="0">
+                            <div class="glass-row-header">
+                                <span class="glass-row-label">Glass Door</span>
+                            </div>
+                            <div class="input-row">
+                                <div class="input-field">
+                                    <input type="number" class="glass-h" placeholder="0.0" step="0.1" min="0">
+                                    <span class="input-unit">m height</span>
+                                </div>
+                                <div class="input-field">
+                                    <input type="number" class="glass-w" placeholder="0.0" step="0.1" min="0">
+                                    <span class="input-unit">m width</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
+                        <button class="calc-btn secondary" id="addGlassBtn" style="padding: 8px 16px; font-size: 0.75rem;">+ Add Window</button>
+                        <span class="glass-note" style="align-self: center;">1.5m³ added per 1m² of glass</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="calculator-actions">
+                <button class="calc-btn primary" id="calculateBtn">Calculate & Find Heaters</button>
+                <button class="calc-btn secondary" id="clearCalcBtn">Clear</button>
+            </div>
+            
+            <div class="calculator-results" id="calcResults" style="display: none;">
+                <div class="result-card">
+                    <div class="result-item">
+                        <span class="result-label">Base Volume</span>
+                        <span class="result-value" id="baseVolume">0 m³</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Glass Area</span>
+                        <span class="result-value" id="glassArea">0 m²</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Glass Addition</span>
+                        <span class="result-value" id="glassAddition">+0 m³</span>
+                    </div>
+                    <div class="result-item total">
+                        <span class="result-label">Total Effective Volume</span>
+                        <span class="result-value" id="totalVolume">0 m³</span>
+                    </div>
+                </div>
+                <div class="suitable-count" id="suitableCount">
+                    <span class="count-number">0</span> heaters suitable for your sauna
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search heaters by name, power, brand, or item code...">
+            </div>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn saunum" data-filter="saunum">Saunum</button>
+            <button class="filter-btn" data-filter="tulikivi">Tulikivi</button>
+            <button class="filter-btn" data-filter="huum">HUUM</button>
+            <button class="filter-btn" data-filter="iki">IKI</button>
+            <button class="filter-btn" data-filter="eos">EOS</button>
+            <button class="filter-btn" data-filter="harvia">Harvia</button>
+            <button class="filter-btn" data-filter="helo">Helo</button>
+            <button class="filter-btn" data-filter="tylo">Tylö</button>
+            <button class="filter-btn" data-filter="single">1-Phase</button>
+            <button class="filter-btn" data-filter="three">3-Phase</button>
+        </div>
+
+        <div class="brand-legend">
+            <div class="legend-item">
+                <div class="legend-dot saunum"></div>
+                <span>Saunum</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #b5873a;"></div>
+                <span>Tulikivi</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #4a90a4;"></div>
+                <span>HUUM</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #9b5de5;"></div>
+                <span>IKI</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #d44040;"></div>
+                <span>EOS</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #c74b16;"></div>
+                <span>Harvia</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #2b7bbf;"></div>
+                <span>Helo</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot" style="background: #8b5e3c;"></div>
+                <span>Tylö</span>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value" id="totalHeaters">0</div>
+                <div class="stat-label">Total Heaters</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="powerRange">0</div>
+                <div class="stat-label">Power Range (kW)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="roomRange">0</div>
+                <div class="stat-label">Room Range (m³)</div>
+            </div>
+            <div class="stat" id="volumeFilterStat" style="display: none;">
+                <div class="stat-value" id="filterVolume">0</div>
+                <div class="stat-label">Filtering for (m³)</div>
+                <span class="volume-filter-active" id="clearVolumeFilter">✕ Clear</span>
+            </div>
+        </div>
+
+        <div class="heaters-grid" id="heatersGrid">
+            <!-- Cards will be inserted here -->
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <h3>No heaters found</h3>
+            <p>Try adjusting your search or filters</p>
+        </div>
+
+        <div class="disclaimer">
+            <strong>⚠️ Important:</strong> All electrical specifications are based on Australian Standard AS/NZS 3000. 
+            Cable sizing assumes TPS cable in conduit at 40°C ambient. 
+            Always consult a licensed electrician for installation. Circuit breaker sizing and actual installation may vary based on cable run length, installation method, and local conditions.
+        </div>
+    </div>
+
+    <script>
+        // Heater database with calculated Australian electrical specs
+        const heaters = [
+            // ============ SAUNUM HEATERS ============
+            // --- Saunum Experience (Home Sauna, Compact Design) ---
+            {
+                itemNumber: "SAUNUM-EXP3.6",
+                name: "Saunum Experience 3.6kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 3.6,
+                roomSizeMin: 2,
+                roomSizeMax: 5,
+                roomNote: "Compact home sauna | 60-70kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 15.7,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 3200
+            },
+            {
+                itemNumber: "SAUNUM-EXP4.5",
+                name: "Saunum Experience 4.5kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 3,
+                roomSizeMax: 5,
+                roomNote: "Home sauna | 60-70kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 3400
+            },
+            {
+                itemNumber: "SAUNUM-EXP6",
+                name: "Saunum Experience 6kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 5,
+                roomSizeMax: 7,
+                roomNote: "Home sauna | 60-70kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 3600
+            },
+            {
+                itemNumber: "SAUNUM-EXP9",
+                name: "Saunum Experience 9kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 9,
+                roomSizeMin: 7,
+                roomSizeMax: 10,
+                roomNote: "Home sauna | 90-105kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 39.1,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 4000
+            },
+            // --- Saunum Experience 3-Phase Models ---
+            {
+                itemNumber: "SAUNUM-EXP6-3P",
+                name: "Saunum Experience 6kW (3Ø)",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 5,
+                roomSizeMax: 8,
+                roomNote: "Home sauna | 60kg stones | 3-phase",
+                phase: "three",
+                voltage: 400,
+                amps: 8.7,
+                cableSize: 2.5,
+                circuitBreaker: 16,
+                price: 3700
+            },
+            {
+                itemNumber: "SAUNUM-EXP9-3P",
+                name: "Saunum Experience 9kW (3Ø)",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 9,
+                roomSizeMin: 7,
+                roomSizeMax: 10,
+                roomNote: "Home sauna | 90kg stones | 3-phase",
+                phase: "three",
+                voltage: 400,
+                amps: 13.0,
+                cableSize: 2.5,
+                circuitBreaker: 16,
+                price: 4100
+            },
+            {
+                itemNumber: "SAUNUM-EXP10.5-3P",
+                name: "Saunum Experience 10.5kW (3Ø)",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 9,
+                roomSizeMax: 14,
+                roomNote: "Medium sauna | 90kg stones | 3-phase",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 4400
+            },
+            {
+                itemNumber: "SAUNUM-EXP12-3P",
+                name: "Saunum Experience 12kW (3Ø)",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 12,
+                roomSizeMin: 10,
+                roomSizeMax: 18,
+                roomNote: "Large sauna | 90kg stones | 3-phase",
+                phase: "three",
+                voltage: 400,
+                amps: 17.3,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 4800
+            },
+            // --- Saunum Spa Session (5-in-1 Home Spa, Golden Wave 2024 Winner) ---
+            {
+                itemNumber: "SAUNUM-SPA6",
+                name: "Saunum Spa Session 6kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 6,
+                roomSizeMax: 10,
+                roomNote: "5-in-1 spa | Integrated controller",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 4500
+            },
+            {
+                itemNumber: "SAUNUM-SPA9",
+                name: "Saunum Spa Session 9kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 9,
+                roomSizeMin: 9,
+                roomSizeMax: 12,
+                roomNote: "5-in-1 spa | 60-70kg stones | Integrated controller",
+                phase: "single",
+                voltage: 230,
+                amps: 39.1,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 5200
+            },
+            // --- Saunum Pro Experience (Commercial Grade) ---
+            {
+                itemNumber: "SAUNUM-PRO9",
+                name: "Saunum Pro Experience 9kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 9,
+                roomSizeMin: 8,
+                roomSizeMax: 11,
+                roomNote: "Commercial grade | 105-120kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 39.1,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 5500
+            },
+            {
+                itemNumber: "SAUNUM-PRO12",
+                name: "Saunum Pro Experience 12kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 12,
+                roomSizeMin: 10,
+                roomSizeMax: 14,
+                roomNote: "Commercial grade | 105-120kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 17.3,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 6200
+            },
+            {
+                itemNumber: "SAUNUM-PRO15",
+                name: "Saunum Pro Experience 15kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 15,
+                roomSizeMin: 14,
+                roomSizeMax: 22,
+                roomNote: "Commercial grade | 120kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 21.7,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 6800
+            },
+            // --- Saunum Luxury (Premium Large Sauna) ---
+            {
+                itemNumber: "SAUNUM-LUX13",
+                name: "Saunum Luxury 13.2kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 13.2,
+                roomSizeMin: 10,
+                roomSizeMax: 15,
+                roomNote: "Premium design | 200-220kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 19.1,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 7500
+            },
+            {
+                itemNumber: "SAUNUM-LUX16",
+                name: "Saunum Luxury 16.6kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 16.6,
+                roomSizeMin: 14,
+                roomSizeMax: 20,
+                roomNote: "Premium design | 200-220kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 24.0,
+                cableSize: 4,
+                circuitBreaker: 32,
+                price: 8200
+            },
+            {
+                itemNumber: "SAUNUM-LUX20",
+                name: "Saunum Luxury 19.8kW",
+                brand: "Saunum",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 19.8,
+                roomSizeMin: 18,
+                roomSizeMax: 25,
+                roomNote: "Premium design | 200-220kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 28.6,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 8900
+            },
+            // ============ TULIKIVI HEATERS ============
+            {
+                itemNumber: "SS1673NCB",
+                name: "10.2kW Kaarna Classic Sauna Heater",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.2,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Optimal: 10-13m³",
+                phase: "three",
+                voltage: 400,
+                amps: 14.7,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 4262.5
+            },
+            {
+                itemNumber: "SS1661NCB",
+                name: "10.2kW Pyry Sauna Heater",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.2,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Optimal: 10-13m³",
+                phase: "three",
+                voltage: 400,
+                amps: 14.7,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 3850
+            },
+            {
+                itemNumber: "Kaarnaclassickit3",
+                name: "10.2kW Kaarna Classic Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 10.2,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Optimal: 10-13m³",
+                phase: "three",
+                voltage: 400,
+                amps: 14.7,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 6662
+            },
+            {
+                itemNumber: "Pyrykit3",
+                name: "10.2kW Pyry Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 10.2,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Optimal: 10-13m³",
+                phase: "three",
+                voltage: 400,
+                amps: 14.7,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 6250
+            },
+            {
+                itemNumber: "Tuiskukit3",
+                name: "10.2kW Tuisku Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 10.2,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Optimal: 10-13m³",
+                phase: "three",
+                voltage: 400,
+                amps: 14.7,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 6180
+            },
+            {
+                itemNumber: "2XSS036D",
+                name: "13.6kW D-Body for Tuisku XL",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 13.6,
+                roomSizeMin: 12,
+                roomSizeMax: 20,
+                roomNote: "Optimal: 14-18m³",
+                phase: "three",
+                voltage: 400,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 1815
+            },
+            {
+                itemNumber: "TuiskuXLkit1",
+                name: "13.6kW Tuisku XL Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 13.6,
+                roomSizeMin: 12,
+                roomSizeMax: 20,
+                roomNote: "Optimal: 14-18m³",
+                phase: "three",
+                voltage: 400,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 9135
+            },
+            {
+                itemNumber: "2XSS037D",
+                name: "18kW D-Body for Tuisku XL",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 18,
+                roomSizeMin: 16,
+                roomSizeMax: 27,
+                roomNote: "Optimal: 18-24m³",
+                phase: "three",
+                voltage: 400,
+                amps: 26,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 1895
+            },
+            {
+                itemNumber: "TuiskuXLkit2",
+                name: "18kW Tuisku XL Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 18,
+                roomSizeMin: 16,
+                roomSizeMax: 27,
+                roomNote: "Optimal: 18-24m³",
+                phase: "three",
+                voltage: 400,
+                amps: 26,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 9215
+            },
+            {
+                itemNumber: "2XSS038D",
+                name: "21kW D-Body for Tuisku XL",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 21,
+                roomSizeMin: 19,
+                roomSizeMax: 32,
+                roomNote: "Optimal: 21-28m³",
+                phase: "three",
+                voltage: 400,
+                amps: 30.3,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 2145
+            },
+            {
+                itemNumber: "TuiskuXLkit3",
+                name: "21kW Tuisku XL Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 21,
+                roomSizeMin: 19,
+                roomSizeMax: 32,
+                roomNote: "Optimal: 21-28m³",
+                phase: "three",
+                voltage: 400,
+                amps: 30.3,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 9465
+            },
+            {
+                itemNumber: "SS1255D",
+                name: "4.5kW Routa Wall Hung + Facade",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 3,
+                roomSizeMax: 6,
+                roomNote: "Optimal: 4-5m³",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 2820
+            },
+            {
+                itemNumber: "Hallakit1",
+                name: "4.5kW Halla Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 3,
+                roomSizeMax: 6,
+                roomNote: "Optimal: 4-5m³",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 4035
+            },
+            {
+                itemNumber: "SS1260DB",
+                name: "4.5kW Halla Wall Hung Black",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 3,
+                roomSizeMax: 6,
+                roomNote: "Optimal: 4-5m³",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 1635
+            },
+            {
+                itemNumber: "Routakit1",
+                name: "4.5kW Routa Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 3,
+                roomSizeMax: 6,
+                roomNote: "Optimal: 4-5m³",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 7465
+            },
+            {
+                itemNumber: "SS1256D",
+                name: "6kW Routa Wall Hung + Facade",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 4,
+                roomSizeMax: 8,
+                roomNote: "Optimal: 5-7m³",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 2890
+            },
+            {
+                itemNumber: "SS1671NCB",
+                name: "6.8kW Kaarna Classic Sauna Heater",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6.8,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Optimal: 6-8m³",
+                phase: "single",
+                voltage: 230,
+                amps: 29.6,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 3883
+            },
+            {
+                itemNumber: "SS1659NCB",
+                name: "6.8kW Pyry Sauna Heater",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6.8,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Optimal: 6-8m³",
+                phase: "single",
+                voltage: 230,
+                amps: 29.6,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 3475
+            },
+            {
+                itemNumber: "SS036D",
+                name: "6.8kW D-Body Sauna Heater Structure",
+                brand: "Tulikivi",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6.8,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Optimal: 6-8m³",
+                phase: "single",
+                voltage: 230,
+                amps: 29.6,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 910
+            },
+            {
+                itemNumber: "Kaarnaclassickit1",
+                name: "6.8kW Kaarna Classic Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 6.8,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Optimal: 6-8m³",
+                phase: "single",
+                voltage: 230,
+                amps: 29.6,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 6283
+            },
+            {
+                itemNumber: "Pyrykit1",
+                name: "6.8kW Pyry Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 6.8,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Optimal: 6-8m³",
+                phase: "single",
+                voltage: 230,
+                amps: 29.6,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 5875
+            },
+            {
+                itemNumber: "Tuiskukit1",
+                name: "6.8kW Tuisku Kit (WiFi + Stones)",
+                brand: "Tulikivi",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 6.8,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Optimal: 6-8m³",
+                phase: "single",
+                voltage: 230,
+                amps: 29.6,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 6015
+            },
+            // ============ HUUM HEATERS ============
+            {
+                itemNumber: "Cliffkit3",
+                name: "10.5kW Cliff Sauna Heater Kit",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Optimal: 10-13m³",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 3630
+            },
+            {
+                itemNumber: "Corekit3",
+                name: "10.5kW Core Thermo Aspen Kit (WiFi)",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Optimal: 10-13m³",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 5484
+            },
+            {
+                itemNumber: "SS038D",
+                name: "10.5kW D-Body Sauna Heater Structure",
+                brand: "HUUM",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Optimal: 10-13m³",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 1075
+            },
+            {
+                itemNumber: "Hiveminikit3",
+                name: "10.5kW Hive Mini Kit (Local Control)",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Optimal: 10-13m³",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 4095
+            },
+            {
+                itemNumber: "Hivewoodminikit",
+                name: "13kW Hive Wood Mini + Stones",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 13,
+                roomSizeMin: 12,
+                roomSizeMax: 18,
+                roomNote: "Optimal: 13-17m³ | 250kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 18.8,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 3055
+            },
+            {
+                itemNumber: "Huum1",
+                name: "15kW HUUM Hive (WiFi + Stones)",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 15,
+                roomSizeMin: 15,
+                roomSizeMax: 23,
+                roomNote: "Optimal: 15-20m³ | 250kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 21.7,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 5839
+            },
+            {
+                itemNumber: "Hivekit2",
+                name: "17kW Hive Wood LS + Stones",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 17,
+                roomSizeMin: 15,
+                roomSizeMax: 25,
+                roomNote: "Optimal: 17-22m³",
+                phase: "three",
+                voltage: 400,
+                amps: 24.5,
+                cableSize: 4,
+                circuitBreaker: 32,
+                price: 4060
+            },
+            {
+                itemNumber: "Hivekit1",
+                name: "17kW Hive Wood + Stones",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 17,
+                roomSizeMin: 15,
+                roomSizeMax: 25,
+                roomNote: "Optimal: 17-22m³",
+                phase: "three",
+                voltage: 400,
+                amps: 24.5,
+                cableSize: 4,
+                circuitBreaker: 32,
+                price: 3840
+            },
+            {
+                itemNumber: "Hivekit3",
+                name: "18kW HUUM Hive Kit (Local Control)",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 18,
+                roomSizeMin: 18,
+                roomSizeMax: 28,
+                roomNote: "Optimal: 18-24m³ | 250kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 26,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 5535
+            },
+            {
+                itemNumber: "Cliffminkit",
+                name: "3.5kW Cliff Mini Kit (Local Control)",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 3.5,
+                roomSizeMin: 3,
+                roomSizeMax: 6,
+                roomNote: "Optimal: 3.5-5m³ | 60kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 15.2,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 2855
+            },
+            {
+                itemNumber: "Dropkit1",
+                name: "4.5kW Drop Kit (Local Control)",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 2,
+                roomSizeMax: 7,
+                roomNote: "Optimal: 4-5m³ | 55kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 2440
+            },
+            {
+                itemNumber: "Dropkit2",
+                name: "6kW Drop Kit (Local Control)",
+                brand: "HUUM",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Optimal: 5-7m³ | 55kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 2560
+            },
+            // ============ IKI HEATERS ============
+            {
+                itemNumber: "Ikipillarkit3",
+                name: "12kW IKI Pillar Sauna Heater Kit",
+                brand: "IKI",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 12,
+                roomSizeMin: 10,
+                roomSizeMax: 18,
+                roomNote: "Optimal: 12-16m³",
+                phase: "three",
+                voltage: 400,
+                amps: 17.3,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 5560
+            },
+            {
+                itemNumber: "Ikipillarprokit1",
+                name: "13.8kW IKI Pillar Pro Kit",
+                brand: "IKI",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 13.8,
+                roomSizeMin: 15,
+                roomSizeMax: 25,
+                roomNote: "Optimal: 15-22m³ | 140-170kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 19.9,
+                cableSize: 6,
+                circuitBreaker: 20,
+                price: 6595
+            },
+            {
+                itemNumber: "Ikipillarprokit2",
+                name: "20.7kW IKI Pillar Pro + Extension Box",
+                brand: "IKI",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 20.7,
+                roomSizeMin: 22,
+                roomSizeMax: 32,
+                roomNote: "Optimal: 22-30m³ | 230kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 29.9,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 9385
+            },
+            {
+                itemNumber: "Ikipillarprokit3",
+                name: "27kW IKI Pillar Pro + Extension Box",
+                brand: "IKI",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 27,
+                roomSizeMin: 24,
+                roomSizeMax: 40,
+                roomNote: "Optimal: 27-35m³",
+                phase: "three",
+                voltage: 400,
+                amps: 39,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 10740
+            },
+            {
+                itemNumber: "Ikipillarprokit4",
+                name: "36kW IKI Pillar Pro + Extension Boxes",
+                brand: "IKI",
+                type: "Sauna Heater Kit",
+                category: "Sauna",
+                powerKW: 36,
+                roomSizeMin: 32,
+                roomSizeMax: 55,
+                roomNote: "Optimal: 36-48m³ (Commercial)",
+                phase: "three",
+                voltage: 400,
+                amps: 52,
+                cableSize: 16,
+                circuitBreaker: 63,
+                price: 13810
+            },
+            // ============ EOS HEATERS ============
+            // --- EOS 34.G HD (Commercial Floor Standing) ---
+            {
+                itemNumber: "94 8097",
+                name: "EOS 34.G HD 15kW",
+                brand: "EOS",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 15,
+                roomSizeMin: 15,
+                roomSizeMax: 25,
+                roomNote: "Commercial | ~30kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 21.7,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "94 8098",
+                name: "EOS 34.G HD 18kW",
+                brand: "EOS",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 18,
+                roomSizeMin: 18,
+                roomSizeMax: 30,
+                roomNote: "Commercial | ~30kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 26.0,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "94 8099",
+                name: "EOS 34.G HD 21kW",
+                brand: "EOS",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 21,
+                roomSizeMin: 21,
+                roomSizeMax: 35,
+                roomNote: "Commercial | ~30kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 30.3,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "94 7360",
+                name: "EOS 34.G HD 24kW",
+                brand: "EOS",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 24,
+                roomSizeMin: 24,
+                roomSizeMax: 40,
+                roomNote: "Commercial | ~45kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 34.6,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "94 7361",
+                name: "EOS 34.G HD 27kW",
+                brand: "EOS",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 27,
+                roomSizeMin: 27,
+                roomSizeMax: 45,
+                roomNote: "Commercial | ~45kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 39.0,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "94 7362",
+                name: "EOS 34.G HD 30kW",
+                brand: "EOS",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 30,
+                roomSizeMin: 30,
+                roomSizeMax: 50,
+                roomNote: "Commercial | ~45kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 43.3,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "94 7363",
+                name: "EOS 34.G HD 36kW",
+                brand: "EOS",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 36,
+                roomSizeMin: 36,
+                roomSizeMax: 60,
+                roomNote: "Commercial | ~45kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 52.0,
+                cableSize: 16,
+                circuitBreaker: 63,
+                price: 0
+            },
+            // --- EOS Bi-O-Star (Commercial with Vaporizer) ---
+            {
+                itemNumber: "94 2589",
+                name: "EOS Bi-O-Star 21kW",
+                brand: "EOS",
+                type: "Commercial Bi-O Heater",
+                category: "Sauna",
+                powerKW: 21,
+                roomSizeMin: 21,
+                roomSizeMax: 35,
+                roomNote: "Bi-O | 2×2kW vaporizer | ~30kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 30.3,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "94 4079",
+                name: "EOS Bi-O-Star 24kW",
+                brand: "EOS",
+                type: "Commercial Bi-O Heater",
+                category: "Sauna",
+                powerKW: 24,
+                roomSizeMin: 24,
+                roomSizeMax: 40,
+                roomNote: "Bi-O | 2×2kW vaporizer | ~45kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 34.6,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "94 3037",
+                name: "EOS Bi-O-Star 30kW",
+                brand: "EOS",
+                type: "Commercial Bi-O Heater",
+                category: "Sauna",
+                powerKW: 30,
+                roomSizeMin: 30,
+                roomSizeMax: 50,
+                roomNote: "Bi-O | 2×2kW vaporizer | ~45kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 43.3,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            // --- EOS 46.U XL (Behind-the-bench) ---
+            {
+                itemNumber: "94 7219",
+                name: "EOS 46.U XL 15kW",
+                brand: "EOS",
+                type: "Behind-Bench Heater",
+                category: "Sauna",
+                powerKW: 15,
+                roomSizeMin: 15,
+                roomSizeMax: 25,
+                roomNote: "Behind-bench | ~20kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 21.7,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "94 7222",
+                name: "EOS 46.U XL 18kW",
+                brand: "EOS",
+                type: "Behind-Bench Heater",
+                category: "Sauna",
+                powerKW: 18,
+                roomSizeMin: 18,
+                roomSizeMax: 30,
+                roomNote: "Behind-bench | ~20kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 26.0,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            // --- EOS Orbit (Designer, Round) ---
+            {
+                itemNumber: "94 6421",
+                name: "EOS Orbit 18kW",
+                brand: "EOS",
+                type: "Designer Sauna Heater",
+                category: "Sauna",
+                powerKW: 18,
+                roomSizeMin: 18,
+                roomSizeMax: 30,
+                roomNote: "Designer round | ~40kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 26.0,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "94 6422",
+                name: "EOS Orbit 21kW",
+                brand: "EOS",
+                type: "Designer Sauna Heater",
+                category: "Sauna",
+                powerKW: 21,
+                roomSizeMin: 21,
+                roomSizeMax: 35,
+                roomNote: "Designer round | ~40kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 30.3,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "94 6423",
+                name: "EOS Orbit 24kW",
+                brand: "EOS",
+                type: "Designer Sauna Heater",
+                category: "Sauna",
+                powerKW: 24,
+                roomSizeMin: 24,
+                roomSizeMax: 40,
+                roomNote: "Designer round | ~40kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 34.6,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            // --- EOS Goliath HD (Heavy-Duty Commercial) ---
+            {
+                itemNumber: "94 7826",
+                name: "EOS Goliath HD 18kW",
+                brand: "EOS",
+                type: "Commercial HD Heater",
+                category: "Sauna",
+                powerKW: 18,
+                roomSizeMin: 18,
+                roomSizeMax: 30,
+                roomNote: "Heavy-duty | ~75kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 26.0,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "94 7827",
+                name: "EOS Goliath HD 24kW",
+                brand: "EOS",
+                type: "Commercial HD Heater",
+                category: "Sauna",
+                powerKW: 24,
+                roomSizeMin: 24,
+                roomSizeMax: 40,
+                roomNote: "Heavy-duty | ~75kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 34.6,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "94 7828",
+                name: "EOS Goliath HD 30kW",
+                brand: "EOS",
+                type: "Commercial HD Heater",
+                category: "Sauna",
+                powerKW: 30,
+                roomSizeMin: 30,
+                roomSizeMax: 65,
+                roomNote: "Heavy-duty | ~75kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 43.3,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "94 7829",
+                name: "EOS Goliath HD 36kW",
+                brand: "EOS",
+                type: "Commercial HD Heater",
+                category: "Sauna",
+                powerKW: 36,
+                roomSizeMin: 36,
+                roomSizeMax: 75,
+                roomNote: "Heavy-duty | ~75kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 52.0,
+                cableSize: 16,
+                circuitBreaker: 63,
+                price: 0
+            },
+            // --- EOS Herkules XL S120 HD (Premium Commercial) ---
+            {
+                itemNumber: "94 8116",
+                name: "EOS Herkules XL S120 HD 18kW",
+                brand: "EOS",
+                type: "Premium Commercial Heater",
+                category: "Sauna",
+                powerKW: 18,
+                roomSizeMin: 24,
+                roomSizeMax: 35,
+                roomNote: "Premium | 2×60kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 26.0,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "94 8117",
+                name: "EOS Herkules XL S120 HD 24kW",
+                brand: "EOS",
+                type: "Premium Commercial Heater",
+                category: "Sauna",
+                powerKW: 24,
+                roomSizeMin: 35,
+                roomSizeMax: 45,
+                roomNote: "Premium | 2×60kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 34.6,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "94 8118",
+                name: "EOS Herkules XL S120 HD 30kW",
+                brand: "EOS",
+                type: "Premium Commercial Heater",
+                category: "Sauna",
+                powerKW: 30,
+                roomSizeMin: 45,
+                roomSizeMax: 65,
+                roomNote: "Premium | 2×60kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 43.3,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            // --- EOS Herkules XL S120 Vapor HD (Premium with Vaporizer) ---
+            {
+                itemNumber: "94 8119",
+                name: "EOS Herkules XL S120 Vapor 18kW",
+                brand: "EOS",
+                type: "Premium Bi-O Heater",
+                category: "Sauna",
+                powerKW: 18,
+                roomSizeMin: 24,
+                roomSizeMax: 35,
+                roomNote: "Premium Bi-O | 3kW vaporizer | 2×60kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 26.0,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "94 8120",
+                name: "EOS Herkules XL S120 Vapor 24kW",
+                brand: "EOS",
+                type: "Premium Bi-O Heater",
+                category: "Sauna",
+                powerKW: 24,
+                roomSizeMin: 35,
+                roomSizeMax: 45,
+                roomNote: "Premium Bi-O | 4kW vaporizer | 2×60kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 34.6,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "94 8121",
+                name: "EOS Herkules XL S120 Vapor 30kW",
+                brand: "EOS",
+                type: "Premium Bi-O Heater",
+                category: "Sauna",
+                powerKW: 30,
+                roomSizeMin: 45,
+                roomSizeMax: 65,
+                roomNote: "Premium Bi-O | 4kW vaporizer | 2×60kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 43.3,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            // --- EOS Mega S HD (Large Commercial) ---
+            {
+                itemNumber: "94 8094",
+                name: "EOS Mega S HD 36kW",
+                brand: "EOS",
+                type: "Large Commercial Heater",
+                category: "Sauna",
+                powerKW: 36,
+                roomSizeMin: 36,
+                roomSizeMax: 60,
+                roomNote: "Large commercial | ~100kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 52.0,
+                cableSize: 16,
+                circuitBreaker: 63,
+                price: 0
+            },
+            {
+                itemNumber: "94 8045",
+                name: "EOS Mega S HD 42kW",
+                brand: "EOS",
+                type: "Large Commercial Heater",
+                category: "Sauna",
+                powerKW: 42,
+                roomSizeMin: 42,
+                roomSizeMax: 70,
+                roomNote: "Large commercial | ~100kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 60.6,
+                cableSize: 16,
+                circuitBreaker: 80,
+                price: 0
+            },
+            {
+                itemNumber: "94 8044",
+                name: "EOS Mega S HD 48kW",
+                brand: "EOS",
+                type: "Large Commercial Heater",
+                category: "Sauna",
+                powerKW: 48,
+                roomSizeMin: 48,
+                roomSizeMax: 80,
+                roomNote: "Large commercial | ~100kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 69.3,
+                cableSize: 25,
+                circuitBreaker: 80,
+                price: 0
+            },
+            // --- EOS Mega HD (Extra Large Commercial) ---
+            {
+                itemNumber: "94 7735",
+                name: "EOS Mega HD 42kW",
+                brand: "EOS",
+                type: "XL Commercial Heater",
+                category: "Sauna",
+                powerKW: 42,
+                roomSizeMin: 42,
+                roomSizeMax: 70,
+                roomNote: "XL commercial | ~150kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 60.6,
+                cableSize: 16,
+                circuitBreaker: 80,
+                price: 0
+            },
+            {
+                itemNumber: "94 7736",
+                name: "EOS Mega HD 48kW",
+                brand: "EOS",
+                type: "XL Commercial Heater",
+                category: "Sauna",
+                powerKW: 48,
+                roomSizeMin: 48,
+                roomSizeMax: 80,
+                roomNote: "XL commercial | ~150kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 69.3,
+                cableSize: 25,
+                circuitBreaker: 80,
+                price: 0
+            },
+            {
+                itemNumber: "94 7737",
+                name: "EOS Mega HD 54kW",
+                brand: "EOS",
+                type: "XL Commercial Heater",
+                category: "Sauna",
+                powerKW: 54,
+                roomSizeMin: 54,
+                roomSizeMax: 90,
+                roomNote: "XL commercial | ~150kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 77.9,
+                cableSize: 25,
+                circuitBreaker: 100,
+                price: 0
+            },
+            {
+                itemNumber: "94 7738",
+                name: "EOS Mega HD 60kW",
+                brand: "EOS",
+                type: "XL Commercial Heater",
+                category: "Sauna",
+                powerKW: 60,
+                roomSizeMin: 60,
+                roomSizeMax: 100,
+                roomNote: "XL commercial | ~150kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 86.6,
+                cableSize: 35,
+                circuitBreaker: 100,
+                price: 0
+            },
+            {
+                itemNumber: "94 7739",
+                name: "EOS Mega HD 72kW",
+                brand: "EOS",
+                type: "XL Commercial Heater",
+                category: "Sauna",
+                powerKW: 72,
+                roomSizeMin: 72,
+                roomSizeMax: 120,
+                roomNote: "XL commercial | ~150kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 103.9,
+                cableSize: 50,
+                circuitBreaker: 125,
+                price: 0
+            },
+            // --- EOS Zeus HD (Designer Luxury) ---
+            {
+                itemNumber: "94 7837",
+                name: "EOS Zeus HD 20kW",
+                brand: "EOS",
+                type: "Designer Luxury Heater",
+                category: "Sauna",
+                powerKW: 20,
+                roomSizeMin: 20,
+                roomSizeMax: 33,
+                roomNote: "Luxury designer | ~100kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 28.9,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "94 7838",
+                name: "EOS Zeus HD 24kW",
+                brand: "EOS",
+                type: "Designer Luxury Heater",
+                category: "Sauna",
+                powerKW: 24,
+                roomSizeMin: 24,
+                roomSizeMax: 40,
+                roomNote: "Luxury designer | ~100kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 34.6,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "94 7839",
+                name: "EOS Zeus HD 30kW",
+                brand: "EOS",
+                type: "Designer Luxury Heater",
+                category: "Sauna",
+                powerKW: 30,
+                roomSizeMin: 30,
+                roomSizeMax: 65,
+                roomNote: "Luxury designer | ~100kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 43.3,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "94 7840",
+                name: "EOS Zeus HD 36kW",
+                brand: "EOS",
+                type: "Designer Luxury Heater",
+                category: "Sauna",
+                powerKW: 36,
+                roomSizeMin: 36,
+                roomSizeMax: 75,
+                roomNote: "Luxury designer | ~100kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 52.0,
+                cableSize: 16,
+                circuitBreaker: 63,
+                price: 0
+            },
+            // --- EOS Zeus L HD (Designer Luxury - Low Profile) ---
+            {
+                itemNumber: "94 7849",
+                name: "EOS Zeus L HD 20kW",
+                brand: "EOS",
+                type: "Designer Low-Profile Heater",
+                category: "Sauna",
+                powerKW: 20,
+                roomSizeMin: 20,
+                roomSizeMax: 33,
+                roomNote: "Low-profile luxury | ~120kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 28.9,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "94 7850",
+                name: "EOS Zeus L HD 24kW",
+                brand: "EOS",
+                type: "Designer Low-Profile Heater",
+                category: "Sauna",
+                powerKW: 24,
+                roomSizeMin: 24,
+                roomSizeMax: 40,
+                roomNote: "Low-profile luxury | ~120kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 34.6,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "94 7851",
+                name: "EOS Zeus L HD 30kW",
+                brand: "EOS",
+                type: "Designer Low-Profile Heater",
+                category: "Sauna",
+                powerKW: 30,
+                roomSizeMin: 30,
+                roomSizeMax: 65,
+                roomNote: "Low-profile luxury | ~120kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 43.3,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "94 7852",
+                name: "EOS Zeus L HD 36kW",
+                brand: "EOS",
+                type: "Designer Low-Profile Heater",
+                category: "Sauna",
+                powerKW: 36,
+                roomSizeMin: 36,
+                roomSizeMax: 75,
+                roomNote: "Low-profile luxury | ~120kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 52.0,
+                cableSize: 16,
+                circuitBreaker: 63,
+                price: 0
+            },
+            // ============ HARVIA HEATERS ============
+            {
+                itemNumber: "HARVIA-VEGA35",
+                name: "Harvia Vega Compact 3.5kW",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 3.5,
+                roomSizeMin: 2,
+                roomSizeMax: 4,
+                roomNote: "Ultra compact | Wall-mount",
+                phase: "single",
+                voltage: 230,
+                amps: 15.2,
+                cableSize: 4,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-KIP45",
+                name: "Harvia KIP 4.5kW",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 3,
+                roomSizeMax: 6,
+                roomNote: "Compact wall-mount | 20kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-KIP60",
+                name: "Harvia KIP 6kW",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Wall-mount | 20kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-SP60",
+                name: "Harvia Spirit 6kW",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 5,
+                roomSizeMax: 8,
+                roomNote: "Floor-standing | Large stone bed",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-CIL60",
+                name: "Harvia Cilindro 6kW",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 4,
+                roomSizeMax: 8,
+                roomNote: "Cylindrical | Half-wall mount",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-GL70",
+                name: "Harvia Globe 7kW (3Ø)",
+                brand: "Harvia",
+                type: "Designer Sauna Heater",
+                category: "Sauna",
+                powerKW: 7,
+                roomSizeMin: 6,
+                roomSizeMax: 10,
+                roomNote: "Designer round | 50kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 10.1,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-KIP80",
+                name: "Harvia KIP 8kW",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 8,
+                roomSizeMin: 7,
+                roomSizeMax: 12,
+                roomNote: "Wall-mount | 20kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 34.8,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-SP80",
+                name: "Harvia Spirit 8kW",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 8,
+                roomSizeMin: 7,
+                roomSizeMax: 12,
+                roomNote: "Floor-standing | Large stone bed",
+                phase: "single",
+                voltage: 230,
+                amps: 34.8,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-CIL80",
+                name: "Harvia Cilindro 8kW",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 8,
+                roomSizeMin: 6,
+                roomSizeMax: 12,
+                roomNote: "Cylindrical | Half-wall mount",
+                phase: "single",
+                voltage: 230,
+                amps: 34.8,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-KIP90",
+                name: "Harvia KIP 9kW",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 9,
+                roomSizeMin: 8,
+                roomSizeMax: 14,
+                roomNote: "Wall-mount | 20kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 39.1,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-CIL90",
+                name: "Harvia Cilindro 9kW",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 9,
+                roomSizeMin: 7,
+                roomSizeMax: 14,
+                roomNote: "Cylindrical | Half-wall mount",
+                phase: "single",
+                voltage: 230,
+                amps: 39.1,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-KIP90-3P",
+                name: "Harvia KIP 9kW (3Ø)",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 9,
+                roomSizeMin: 8,
+                roomSizeMax: 14,
+                roomNote: "Wall-mount | 20kg stones | 3-phase",
+                phase: "three",
+                voltage: 400,
+                amps: 13.0,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-SEN9",
+                name: "Harvia Senator 9kW (3Ø)",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 9,
+                roomSizeMin: 8,
+                roomSizeMax: 14,
+                roomNote: "Floor-standing | 40kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 13.0,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-CILPRO10",
+                name: "Harvia Cilindro Pro 10kW (3Ø)",
+                brand: "Harvia",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 10,
+                roomSizeMin: 9,
+                roomSizeMax: 20,
+                roomNote: "Commercial | 140kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 14.4,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-VIR105",
+                name: "Harvia Virta 10.5kW (3Ø)",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 9,
+                roomSizeMax: 18,
+                roomNote: "Stainless steel | Floor-standing",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 4,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-VP105",
+                name: "Harvia Vega Pro 10.5kW (3Ø)",
+                brand: "Harvia",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Commercial floor | 50kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 4,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-SEN105",
+                name: "Harvia Senator 10.5kW (3Ø)",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 10,
+                roomSizeMax: 14,
+                roomNote: "Floor-standing | 40kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 4,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-CIL105",
+                name: "Harvia Cilindro 10.5kW (3Ø)",
+                brand: "Harvia",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 9,
+                roomSizeMax: 18,
+                roomNote: "Cylindrical | Floor-standing",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 4,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-GL110",
+                name: "Harvia Globe 11kW (3Ø)",
+                brand: "Harvia",
+                type: "Designer Sauna Heater",
+                category: "Sauna",
+                powerKW: 11,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Designer round | 80kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 15.9,
+                cableSize: 4,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-CILPRO13",
+                name: "Harvia Cilindro Pro 13.2kW (3Ø)",
+                brand: "Harvia",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 13.2,
+                roomSizeMin: 9,
+                roomSizeMax: 20,
+                roomNote: "Commercial | 140kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 19.1,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-VP135",
+                name: "Harvia Vega Pro 13.5kW (3Ø)",
+                brand: "Harvia",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 13.5,
+                roomSizeMin: 11,
+                roomSizeMax: 20,
+                roomNote: "Commercial floor | 50kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 19.5,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-VIRPRO16",
+                name: "Harvia Virta Pro 16kW (3Ø)",
+                brand: "Harvia",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 16,
+                roomSizeMin: 14,
+                roomSizeMax: 24,
+                roomNote: "Commercial stainless | Floor-standing",
+                phase: "three",
+                voltage: 400,
+                amps: 23.1,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-VP165",
+                name: "Harvia Vega Pro 16.5kW (3Ø)",
+                brand: "Harvia",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 16.5,
+                roomSizeMin: 16,
+                roomSizeMax: 30,
+                roomNote: "Commercial floor | 50kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 23.8,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-CILPRO16",
+                name: "Harvia Cilindro Pro 16.6kW (3Ø)",
+                brand: "Harvia",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 16.6,
+                roomSizeMin: 15,
+                roomSizeMax: 30,
+                roomNote: "Commercial | 220kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 24.0,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-CILPRO20",
+                name: "Harvia Cilindro Pro 19.8kW (3Ø)",
+                brand: "Harvia",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 19.8,
+                roomSizeMin: 15,
+                roomSizeMax: 30,
+                roomNote: "Commercial | 220kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 28.6,
+                cableSize: 10,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "HARVIA-VIRPRO20",
+                name: "Harvia Virta Pro 20kW (3Ø)",
+                brand: "Harvia",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 20,
+                roomSizeMin: 18,
+                roomSizeMax: 32,
+                roomNote: "Commercial stainless | Floor-standing",
+                phase: "three",
+                voltage: 400,
+                amps: 28.9,
+                cableSize: 10,
+                circuitBreaker: 40,
+                price: 0
+            },
+            // ============ HELO HEATERS ============
+            {
+                itemNumber: "HELO-CUP45",
+                name: "Helo Cup 4.5kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 3,
+                roomSizeMax: 6,
+                roomNote: "Compact wall-mount | 15kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-VIE45",
+                name: "Helo Vienna 4.5kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 3,
+                roomSizeMax: 6,
+                roomNote: "Slim wall-mount | Built-in controls",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-HANKO45",
+                name: "Helo Hanko 4.5kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 3,
+                roomSizeMax: 6,
+                roomNote: "Modern compact | 32kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-CUP60",
+                name: "Helo Cup 6kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Compact wall-mount | 23kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-VIE60",
+                name: "Helo Vienna 6kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Slim wall-mount | Built-in controls",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-HANKO60",
+                name: "Helo Hanko 6kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Modern compact | 32kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-RINGO60",
+                name: "Helo Ringo 6kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Pillar design | 70kg stones | WT technology",
+                phase: "single",
+                voltage: 230,
+                amps: 26.1,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-ST64",
+                name: "Helo Saunatonttu 6.4kW (3Ø)",
+                brand: "Helo",
+                type: "Premium Sauna Heater",
+                category: "Sauna",
+                powerKW: 6.4,
+                roomSizeMin: 7,
+                roomSizeMax: 14,
+                roomNote: "Premium | 100kg stones | Hidden design",
+                phase: "three",
+                voltage: 400,
+                amps: 9.2,
+                cableSize: 2.5,
+                circuitBreaker: 16,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-HIM68",
+                name: "Helo Himalaya 6.8kW (3Ø)",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6.8,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Floor-standing | 100kg stones | WT",
+                phase: "three",
+                voltage: 400,
+                amps: 9.8,
+                cableSize: 2.5,
+                circuitBreaker: 16,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-ROC68",
+                name: "Helo Rocher 6.8kW (3Ø)",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6.8,
+                roomSizeMin: 5,
+                roomSizeMax: 9,
+                roomNote: "Floor-standing | 100kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 9.8,
+                cableSize: 2.5,
+                circuitBreaker: 16,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-CUP80",
+                name: "Helo Cup 8kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 8,
+                roomSizeMin: 8,
+                roomSizeMax: 13,
+                roomNote: "Compact wall-mount | 23kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 34.8,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-VIE80",
+                name: "Helo Vienna 8kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 8,
+                roomSizeMin: 8,
+                roomSizeMax: 12,
+                roomNote: "Slim wall-mount | Built-in controls",
+                phase: "single",
+                voltage: 230,
+                amps: 34.8,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-HANKO80",
+                name: "Helo Hanko 8kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 8,
+                roomSizeMin: 8,
+                roomSizeMax: 13,
+                roomNote: "Modern compact | 32kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 34.8,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-RINGO80",
+                name: "Helo Ringo 8kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 8,
+                roomSizeMin: 8,
+                roomSizeMax: 13,
+                roomNote: "Pillar design | 70kg stones | WT technology",
+                phase: "single",
+                voltage: 230,
+                amps: 34.8,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-ST80",
+                name: "Helo Saunatonttu 8kW (3Ø)",
+                brand: "Helo",
+                type: "Premium Sauna Heater",
+                category: "Sauna",
+                powerKW: 8,
+                roomSizeMin: 9,
+                roomSizeMax: 17,
+                roomNote: "Premium | 100kg stones | Hidden design",
+                phase: "three",
+                voltage: 400,
+                amps: 11.5,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-CUP90",
+                name: "Helo Cup 9kW",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 9,
+                roomSizeMin: 9,
+                roomSizeMax: 14,
+                roomNote: "Compact wall-mount | 23kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 39.1,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-SKLE9",
+                name: "Helo SKLE 9kW (3Ø)",
+                brand: "Helo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 9,
+                roomSizeMin: 8,
+                roomSizeMax: 13,
+                roomNote: "Commercial floor | 60kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 13.0,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-SKLE105",
+                name: "Helo SKLE 10.5kW (3Ø)",
+                brand: "Helo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Commercial floor | 60kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 4,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-HIM105",
+                name: "Helo Himalaya 10.5kW (3Ø)",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 8,
+                roomSizeMax: 13,
+                roomNote: "Floor-standing | 100kg stones | WT",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 4,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-ROC105",
+                name: "Helo Rocher 10.5kW (3Ø)",
+                brand: "Helo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.5,
+                roomSizeMin: 9,
+                roomSizeMax: 15,
+                roomNote: "Floor-standing | 100kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 15.2,
+                cableSize: 4,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-SKLE12",
+                name: "Helo SKLE 12kW (3Ø)",
+                brand: "Helo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 12,
+                roomSizeMin: 10,
+                roomSizeMax: 18,
+                roomNote: "Commercial floor | 60kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 17.3,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-SKLE15",
+                name: "Helo SKLE 15kW (3Ø)",
+                brand: "Helo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 15,
+                roomSizeMin: 14,
+                roomSizeMax: 24,
+                roomNote: "Commercial floor | 60kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 21.7,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-MAG18",
+                name: "Helo Magma 18kW (3Ø)",
+                brand: "Helo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 18,
+                roomSizeMin: 18,
+                roomSizeMax: 30,
+                roomNote: "Large commercial | 80kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 26.0,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-MAG21",
+                name: "Helo Magma 21kW (3Ø)",
+                brand: "Helo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 21,
+                roomSizeMin: 24,
+                roomSizeMax: 36,
+                roomNote: "Large commercial | 80kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 30.3,
+                cableSize: 10,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "HELO-MAG26",
+                name: "Helo Magma 26kW (3Ø)",
+                brand: "Helo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 26,
+                roomSizeMin: 30,
+                roomSizeMax: 46,
+                roomNote: "Large commercial | 80kg stones",
+                phase: "three",
+                voltage: 400,
+                amps: 37.5,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            // ============ TYLÖ HEATERS ============
+            {
+                itemNumber: "TYLO-SS22",
+                name: "Tylo Sense Sport 2.2kW",
+                brand: "Tylo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 2.2,
+                roomSizeMin: 2,
+                roomSizeMax: 3,
+                roomNote: "Ultra compact | Thermosafe coating",
+                phase: "single",
+                voltage: 230,
+                amps: 9.6,
+                cableSize: 2.5,
+                circuitBreaker: 16,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-SS45",
+                name: "Tylo Sense Sport 4.5kW",
+                brand: "Tylo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 2,
+                roomSizeMax: 4,
+                roomNote: "Compact | Thermosafe | Split Output",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-SC45",
+                name: "Tylo Sense Combi 4.5kW",
+                brand: "Tylo",
+                type: "Combi Sauna Heater",
+                category: "Sauna",
+                powerKW: 4.5,
+                roomSizeMin: 2,
+                roomSizeMax: 4,
+                roomNote: "Dry + Steam combo | Thermosafe",
+                phase: "single",
+                voltage: 230,
+                amps: 19.6,
+                cableSize: 4,
+                circuitBreaker: 25,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-SS66",
+                name: "Tylo Sense Sport 6.6kW",
+                brand: "Tylo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 6.6,
+                roomSizeMin: 4,
+                roomSizeMax: 8,
+                roomNote: "Wall-mount | Thermosafe | Split Output",
+                phase: "single",
+                voltage: 230,
+                amps: 28.7,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-COM66",
+                name: "Tylo Sense Commercial 6.6kW",
+                brand: "Tylo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 6.6,
+                roomSizeMin: 4,
+                roomSizeMax: 8,
+                roomNote: "Commercial | Thermosafe | Split Output",
+                phase: "single",
+                voltage: 230,
+                amps: 28.7,
+                cableSize: 6,
+                circuitBreaker: 40,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-SS80",
+                name: "Tylo Sense Sport 8kW",
+                brand: "Tylo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 8,
+                roomSizeMin: 6,
+                roomSizeMax: 12,
+                roomNote: "Wall-mount | Thermosafe | Split Output | 20kg stones",
+                phase: "single",
+                voltage: 230,
+                amps: 34.8,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-COM80",
+                name: "Tylo Sense Commercial 8kW",
+                brand: "Tylo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 8,
+                roomSizeMin: 6,
+                roomSizeMax: 12,
+                roomNote: "Commercial | Thermosafe | Split Output",
+                phase: "single",
+                voltage: 230,
+                amps: 34.8,
+                cableSize: 10,
+                circuitBreaker: 50,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-EXP10",
+                name: "Tylo Expression 10kW (3Ø)",
+                brand: "Tylo",
+                type: "Sauna Heater",
+                category: "Sauna",
+                powerKW: 10,
+                roomSizeMin: 10,
+                roomSizeMax: 18,
+                roomNote: "Domestic/Commercial | External control",
+                phase: "three",
+                voltage: 400,
+                amps: 14.4,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-EXC10",
+                name: "Tylo Expression Combi 10kW (3Ø)",
+                brand: "Tylo",
+                type: "Combi Sauna Heater",
+                category: "Sauna",
+                powerKW: 10,
+                roomSizeMin: 10,
+                roomSizeMax: 18,
+                roomNote: "Dry + Steam combo | Commercial capable",
+                phase: "three",
+                voltage: 400,
+                amps: 14.4,
+                cableSize: 2.5,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-COM107",
+                name: "Tylo Sense Commercial 10.7kW (3Ø)",
+                brand: "Tylo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 10.7,
+                roomSizeMin: 10,
+                roomSizeMax: 18,
+                roomNote: "Commercial | Thermosafe | Split Output",
+                phase: "three",
+                voltage: 400,
+                amps: 15.4,
+                cableSize: 4,
+                circuitBreaker: 20,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-COM16",
+                name: "Tylo Sense Commercial 16kW (3Ø)",
+                brand: "Tylo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 16,
+                roomSizeMin: 15,
+                roomSizeMax: 35,
+                roomNote: "Commercial | 25kg stones | Thermosafe",
+                phase: "three",
+                voltage: 400,
+                amps: 23.1,
+                cableSize: 6,
+                circuitBreaker: 32,
+                price: 0
+            },
+            {
+                itemNumber: "TYLO-COM20",
+                name: "Tylo Sense Commercial 20kW (3Ø)",
+                brand: "Tylo",
+                type: "Commercial Sauna Heater",
+                category: "Sauna",
+                powerKW: 20,
+                roomSizeMin: 22,
+                roomSizeMax: 43,
+                roomNote: "Commercial | 25kg stones | Thermosafe",
+                phase: "three",
+                voltage: 400,
+                amps: 28.9,
+                cableSize: 10,
+                circuitBreaker: 40,
+                price: 0
+            }
+        ];
+
+        // Sort by power
+        heaters.sort((a, b) => a.powerKW - b.powerKW);
+
+        let currentFilter = 'all';
+        let searchTerm = '';
+        let calculatedVolume = null;
+
+        function filterHeaters() {
+            return heaters.filter(h => {
+                // Search filter
+                const searchMatch = searchTerm === '' || 
+                    h.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    h.itemNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    h.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    h.brand.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    `${h.powerKW}kw`.includes(searchTerm.toLowerCase());
+
+                // Category filter
+                let categoryMatch = true;
+                if (currentFilter === 'saunum') {
+                    categoryMatch = h.brand === 'Saunum';
+                } else if (currentFilter === 'tulikivi') {
+                    categoryMatch = h.brand === 'Tulikivi';
+                } else if (currentFilter === 'huum') {
+                    categoryMatch = h.brand === 'HUUM';
+                } else if (currentFilter === 'iki') {
+                    categoryMatch = h.brand === 'IKI';
+                } else if (currentFilter === 'eos') {
+                    categoryMatch = h.brand === 'EOS';
+                } else if (currentFilter === 'harvia') {
+                    categoryMatch = h.brand === 'Harvia';
+                } else if (currentFilter === 'helo') {
+                    categoryMatch = h.brand === 'Helo';
+                } else if (currentFilter === 'tylo') {
+                    categoryMatch = h.brand === 'Tylo';
+                } else if (currentFilter === 'single') {
+                    categoryMatch = h.phase === 'single';
+                } else if (currentFilter === 'three') {
+                    categoryMatch = h.phase === 'three';
+                }
+
+                // Volume filter (from calculator)
+                let volumeMatch = true;
+                if (calculatedVolume !== null && h.roomSizeMin && h.roomSizeMax) {
+                    volumeMatch = calculatedVolume >= h.roomSizeMin && calculatedVolume <= h.roomSizeMax;
+                } else if (calculatedVolume !== null && (!h.roomSizeMin || !h.roomSizeMax)) {
+                    volumeMatch = false; // Exclude heaters without room size data when filtering by volume
+                }
+
+                return searchMatch && categoryMatch && volumeMatch;
+            });
+        }
+
+        function renderHeaters() {
+            const filtered = filterHeaters();
+            const grid = document.getElementById('heatersGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+
+            grid.innerHTML = filtered.map(h => `
+                <div class="heater-card ${h.brand === 'Saunum' ? 'saunum' : h.brand === 'Tulikivi' ? 'tulikivi' : h.brand === 'HUUM' ? 'huum' : h.brand === 'IKI' ? 'iki' : h.brand === 'EOS' ? 'eos' : h.brand === 'Harvia' ? 'harvia' : h.brand === 'Helo' ? 'helo' : h.brand === 'Tylo' ? 'tylo' : ''}">
+                    <div class="card-header">
+                        <div class="heater-name">${h.name}</div>
+                        <div class="power-badge">${h.powerKW} kW</div>
+                    </div>
+                    
+                    <div class="card-meta">
+                        <span class="meta-tag brand">${h.brand}</span>
+                        <span class="meta-tag">${h.type}</span>
+                        <span class="meta-tag">${h.phase === 'single' ? '1-Phase' : '3-Phase'}</span>
+                    </div>
+                    
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Room Size</div>
+                            <div class="spec-value highlight">
+                                ${h.roomSizeMin && h.roomSizeMax ? `${h.roomSizeMin}-${h.roomSizeMax} m³` : 'N/A'}
+                            </div>
+                            <div class="spec-note">${h.roomNote || ''}</div>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <div class="spec-label">Voltage</div>
+                            <div class="spec-value">
+                                <span class="phase-indicator ${h.phase === 'three' ? 'three-phase' : ''}">
+                                    <span class="phase-dot"></span>
+                                    ${h.voltage}V ${h.phase === 'three' ? '(3Ø)' : '(1Ø)'}
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <div class="spec-label">Current Draw</div>
+                            <div class="spec-value">${h.amps.toFixed(1)} A</div>
+                            <div class="spec-note">${h.phase === 'three' ? 'Per phase' : 'Total'}</div>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <div class="spec-label">Cable Size (AU)</div>
+                            <div class="spec-value highlight">${h.cableSize} mm²</div>
+                            <div class="spec-note">TPS/conduit</div>
+                        </div>
+                        
+                        <div class="spec-item">
+                            <div class="spec-label">Circuit Breaker</div>
+                            <div class="spec-value">${h.circuitBreaker} A</div>
+                            <div class="spec-note">MCB recommended</div>
+                        </div>
+                    </div>
+                    
+                    <div class="item-code">Item: ${h.itemNumber}</div>
+                </div>
+            `).join('');
+        }
+
+        function updateStats() {
+            const filtered = filterHeaters();
+            document.getElementById('totalHeaters').textContent = filtered.length;
+            
+            if (filtered.length > 0) {
+                const minPower = Math.min(...filtered.map(h => h.powerKW));
+                const maxPower = Math.max(...filtered.map(h => h.powerKW));
+                document.getElementById('powerRange').textContent = `${minPower}-${maxPower}`;
+                
+                const roomHeaters = filtered.filter(h => h.roomSizeMin && h.roomSizeMax);
+                if (roomHeaters.length > 0) {
+                    const minRoom = Math.min(...roomHeaters.map(h => h.roomSizeMin));
+                    const maxRoom = Math.max(...roomHeaters.map(h => h.roomSizeMax));
+                    document.getElementById('roomRange').textContent = `${minRoom}-${maxRoom}`;
+                } else {
+                    document.getElementById('roomRange').textContent = 'N/A';
+                }
+            } else {
+                document.getElementById('powerRange').textContent = '-';
+                document.getElementById('roomRange').textContent = '-';
+            }
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchTerm = e.target.value;
+            renderHeaters();
+            updateStats();
+        });
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                calculatedVolume = null; // Reset calculator filter when changing filters
+                document.getElementById('calcResults').style.display = 'none';
+                document.getElementById('volumeFilterStat').style.display = 'none';
+                renderHeaters();
+                updateStats();
+            });
+        });
+
+        // Room Calculator
+        const GLASS_MULTIPLIER = 1.5; // 1.5m³ per m² of glass
+        let glassElementCount = 1;
+
+        function addGlassElement() {
+            const container = document.getElementById('glassElements');
+            const index = glassElementCount;
+            glassElementCount++;
+
+            const row = document.createElement('div');
+            row.className = 'glass-row';
+            row.dataset.index = index;
+            row.innerHTML = `
+                <div class="glass-row-header">
+                    <span class="glass-row-label">Window ${index}</span>
+                    <button class="remove-glass-btn" onclick="removeGlassElement(${index})">✕ Remove</button>
+                </div>
+                <div class="input-row">
+                    <div class="input-field">
+                        <input type="number" class="glass-h" placeholder="0.0" step="0.1" min="0">
+                        <span class="input-unit">m height</span>
+                    </div>
+                    <div class="input-field">
+                        <input type="number" class="glass-w" placeholder="0.0" step="0.1" min="0">
+                        <span class="input-unit">m width</span>
+                    </div>
+                </div>
+            `;
+            container.appendChild(row);
+
+            // Add Enter key listener to new inputs
+            row.querySelectorAll('input').forEach(input => {
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') calculateVolume();
+                });
+            });
+        }
+
+        function removeGlassElement(index) {
+            const row = document.querySelector(`.glass-row[data-index="${index}"]`);
+            if (row) row.remove();
+        }
+
+        function getTotalGlassArea() {
+            let totalArea = 0;
+            document.querySelectorAll('.glass-row').forEach(row => {
+                const h = parseFloat(row.querySelector('.glass-h').value) || 0;
+                const w = parseFloat(row.querySelector('.glass-w').value) || 0;
+                totalArea += h * w;
+            });
+            return totalArea;
+        }
+
+        document.getElementById('addGlassBtn').addEventListener('click', addGlassElement);
+
+        function calculateVolume() {
+            const length = parseFloat(document.getElementById('roomLength').value) || 0;
+            const width = parseFloat(document.getElementById('roomWidth').value) || 0;
+            const height = parseFloat(document.getElementById('roomHeight').value) || 0;
+
+            if (length <= 0 || width <= 0 || height <= 0) {
+                alert('Please enter valid room dimensions (length, width, and height)');
+                return;
+            }
+
+            const baseVolume = length * width * height;
+            const glassArea = getTotalGlassArea();
+            const glassAddition = glassArea * GLASS_MULTIPLIER;
+            const totalVolume = baseVolume + glassAddition;
+
+            // Update results display
+            document.getElementById('baseVolume').textContent = baseVolume.toFixed(1) + ' m³';
+            document.getElementById('glassArea').textContent = glassArea.toFixed(1) + ' m²';
+            document.getElementById('glassAddition').textContent = '+' + glassAddition.toFixed(1) + ' m³';
+            document.getElementById('totalVolume').textContent = totalVolume.toFixed(1) + ' m³';
+
+            // Store calculated volume for filtering
+            calculatedVolume = totalVolume;
+
+            // Show volume filter indicator in stats bar
+            document.getElementById('volumeFilterStat').style.display = 'block';
+            document.getElementById('filterVolume').textContent = totalVolume.toFixed(1);
+
+            // Count suitable heaters
+            const suitableHeaters = heaters.filter(h =>
+                h.roomSizeMin && h.roomSizeMax &&
+                totalVolume >= h.roomSizeMin && totalVolume <= h.roomSizeMax
+            );
+
+            document.getElementById('suitableCount').innerHTML =
+                `<span class="count-number">${suitableHeaters.length}</span> heaters suitable for your sauna`;
+
+            // Show results
+            document.getElementById('calcResults').style.display = 'block';
+
+            // Reset other filters and show suitable heaters
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+            currentFilter = 'all';
+            searchTerm = '';
+            document.getElementById('searchInput').value = '';
+
+            // Re-render with volume filter
+            renderHeaters();
+            updateStats();
+
+            // Scroll to results
+            document.getElementById('heatersGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function clearCalculator() {
+            document.getElementById('roomLength').value = '';
+            document.getElementById('roomWidth').value = '';
+            document.getElementById('roomHeight').value = '';
+            // Reset glass elements back to just the door
+            const container = document.getElementById('glassElements');
+            container.innerHTML = `
+                <div class="glass-row" data-index="0">
+                    <div class="glass-row-header">
+                        <span class="glass-row-label">Glass Door</span>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-field">
+                            <input type="number" class="glass-h" placeholder="0.0" step="0.1" min="0">
+                            <span class="input-unit">m height</span>
+                        </div>
+                        <div class="input-field">
+                            <input type="number" class="glass-w" placeholder="0.0" step="0.1" min="0">
+                            <span class="input-unit">m width</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            glassElementCount = 1;
+            document.getElementById('calcResults').style.display = 'none';
+            document.getElementById('volumeFilterStat').style.display = 'none';
+            calculatedVolume = null;
+            renderHeaters();
+            updateStats();
+        }
+
+        document.getElementById('calculateBtn').addEventListener('click', calculateVolume);
+        document.getElementById('clearCalcBtn').addEventListener('click', clearCalculator);
+        document.getElementById('clearVolumeFilter').addEventListener('click', clearCalculator);
+
+        // Allow Enter key to trigger calculation
+        document.querySelectorAll('#calculatorSection input').forEach(input => {
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    calculateVolume();
+                }
+            });
+        });
+
+        // Initial render
+        renderHeaters();
+        updateStats();
+    </script>
+</body>
+</html>
